@@ -1,16 +1,20 @@
 package com.example.promtnow_rot
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentTransaction
 import com.example.promtnow_rot.databinding.ActivityMainBinding
+import com.example.promtnow_rot.register.FragmentSignup
+import com.example.promtnow_rot.register.RegisterActivity
 
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     lateinit var rId: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,14 +22,17 @@ class MainActivity : AppCompatActivity() {
 
         //---------------------------------------------------------------------- CLICK BUTTON ------
         rId.btnLogin.setOnClickListener {
-            Toast.makeText(this,rId.inputGmail.text,Toast.LENGTH_LONG).show()
+            //Toast.makeText(this,rId.inputGmail.text,Toast.LENGTH_LONG).show()
         }
         rId.btnSignup.setOnClickListener {
-            Toast.makeText(this,"Singup",Toast.LENGTH_LONG).show()
+
+           startActivity(Intent(this, RegisterActivity::class.java))
+
+            //Toast.makeText(this,"Singup",Toast.LENGTH_LONG).show()
         }
         //__________________________________________________________________________________________
         //---------------------------------------------------------------- CHECK EDITTEXT EMPTY ----
-        rId.inputGmail.addTextChangedListener(object : TextWatcher {
+        rId.logInputGmail.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
 
             }
@@ -36,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 checkEdittextEmpty()
             }
         })
-        rId.inputPassword.addTextChangedListener(object : TextWatcher {
+        rId.logInputPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
 
             }
@@ -50,9 +57,8 @@ class MainActivity : AppCompatActivity() {
         //__________________________________________________________________________________________
     }
     //----------------------------------------------------------------- FUN CHECK EDITTEXT EMPTY ---
-
     fun checkEdittextEmpty(){
-        if(rId.inputGmail.getText().isEmpty() || rId.inputPassword.getText().isEmpty()) {
+        if(rId.logInputGmail.getText().isEmpty() || rId.logInputPassword.getText().isEmpty()) {
             rId.btnLogin.isEnabled = false
             rId.btnLogin.setBackgroundResource(R.drawable.login_btn_disable)
         }else{
