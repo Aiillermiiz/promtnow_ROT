@@ -1,6 +1,7 @@
 package com.example.promtnow_rot.register
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentTransaction
+import com.example.promtnow_rot.LoginActivity
 import com.example.promtnow_rot.R
 import com.example.promtnow_rot.databinding.FragmentSignupBinding
 
@@ -31,7 +34,14 @@ class FragmentSignup : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //---------------------------------------------------------------------- ONCLICK -----------
         binding.regBtnSignup.setOnClickListener {
-            Toast.makeText(context,"Create Account",Toast.LENGTH_LONG).show()
+            fragmentManager!!.beginTransaction().apply {
+                replace(R.id.layoutFragmentContainer, FragmentSignupPin(),"inputPin")
+                addToBackStack("inputPin")
+                commit()
+            }
+        }
+        binding.regBtnBackLogin.setOnClickListener {
+            startActivity(Intent(context, LoginActivity::class.java))
         }
         //__________________________________________________________________________________________
         //---------------------------------------------------------------- CHECK EDITTEXT EMPTY ----

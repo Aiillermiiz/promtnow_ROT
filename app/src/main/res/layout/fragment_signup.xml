@@ -13,14 +13,13 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff"
+    android:background="#FBFBFB"
     android:layout_height="match_parent">
     <TextView
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
         android:text="Create your account"
         android:textSize="25dp"
-        android:textStyle="bold"
+        android:gravity="center"
         android:textColor="#575757"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -29,13 +28,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/card_login"
             android:paddingRight="20dp"
+            android:layout_gravity="center"
             android:paddingLeft="20dp"
             android:paddingTop="20dp"
             android:paddingBottom="33dp"
             android:elevation="10dp"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/lay_1"
@@ -57,7 +57,7 @@
             <EditText
                 android:id="@+id/reg_input_gmail"
                 android:hint="Gmail..."
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:inputType="textEmailAddress"
                 android:layout_marginLeft="10dp"
                 android:drawablePadding="10dp"
@@ -69,7 +69,7 @@
             <EditText
                 android:id="@+id/reg_input_password"
                 android:hint="Password..."
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:layout_marginLeft="10dp"
                 android:inputType="text"
                 android:drawablePadding="10dp"
@@ -92,7 +92,7 @@
             <EditText
                 android:id="@+id/reg_input_name"
                 android:hint="Name..."
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:inputType="text"
                 android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
@@ -103,7 +103,7 @@
             <EditText
                 android:id="@+id/reg_input_department"
                 android:hint="Department..."
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:inputType="text"
                 android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/ic_account_balance_black_24dp"
@@ -114,7 +114,7 @@
             <EditText
                 android:id="@+id/reg_input_position"
                 android:hint="Position..."
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:inputType="text"
                 android:drawableLeft="@drawable/ic_location_searching_black_24dp"
                 android:drawablePadding="10dp"
@@ -125,7 +125,7 @@
             <EditText
                 android:id="@+id/reg_input_staff_code"
                 android:hint="Sraff code..."
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:inputType="text"
                 android:drawableLeft="@drawable/ic_code_black_24dp"
                 android:paddingRight="10dp"
@@ -134,18 +134,33 @@
                 android:layout_below="@+id/reg_input_position"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
-    <Button
-        android:layout_marginTop="20dp"
-        android:id="@+id/reg_btn_signup"
-        android:text="Sign up"
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:textSize="20dp"
-        android:enabled="false"
-        android:textStyle="bold"
-        android:textColor="#ffffff"
-        android:background="#7E89C5"
-        android:layout_height="50dp"/>
+        android:layout_height="wrap_content">
+        <Button
+            android:drawableLeft="@drawable/ic_arrow_back_black_24dp"
+            android:id="@+id/reg_btn_back_login"
+            android:layout_width="50dp"
+            android:padding="10dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/reg_btn_num_pin"
+            android:layout_gravity="center"
+            android:layout_height="50dp"/>
+        <Button
+            android:drawableLeft="@drawable/sign_add_icon"
+            android:id="@+id/reg_btn_signup"
+            android:layout_width="50dp"
+            android:padding="8dp"
+            android:layout_alignParentRight="true"
+            android:textSize="20dp"
+            android:enabled="false"
+            android:background="@drawable/signup_btn_signup"
+            android:layout_height="50dp"/>
+
+    </RelativeLayout>
+
 </LinearLayout>
         </ScrollView>
     </FrameLayout>

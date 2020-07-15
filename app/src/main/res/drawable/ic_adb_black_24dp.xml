@@ -1,9 +1,9 @@
-<vector android:height="50dp" android:tint="#5AADEF"
+<vector android:height="50dp" android:tint="#1AF1EA"
     android:viewportHeight="24.0" android:viewportWidth="24.0"
     android:width="40dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <group
         android:name="rotationGroup"
-        android:pivotX="12"
+        android:pivotX="10"
         android:scaleX="-1" >
 
     <path
