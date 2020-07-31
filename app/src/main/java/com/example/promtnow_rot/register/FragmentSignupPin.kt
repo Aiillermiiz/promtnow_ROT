@@ -1,6 +1,7 @@
 package com.example.promtnow_rot.register
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -14,8 +15,10 @@ import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.promtnow_rot.LoginActivity
 import com.example.promtnow_rot.R
 import com.example.promtnow_rot.databinding.FragmentSignupPinBinding
+import com.example.promtnow_rot.homepage.FragmentHomePage
 import kotlinx.android.synthetic.main.activity_main.*
 import org.w3c.dom.Element
 
@@ -26,9 +29,43 @@ import org.w3c.dom.Element
 class FragmentSignupPin : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentSignupPinBinding
     var pin: String = ""
+    var confirmPin : String = ""
+    var firstPin : String =""
     var indicators = mutableListOf<View>()
-    val listSetbackground = mutableListOf<Unit>()
+    var pinState = PinState.STATE_CREATE
+    var failCount: Int = 0
+    var listener: PinListener? = null
 
+    interface PinListener {
+        fun onSuccess(pin:String)
+        fun onFail(fail: Int)
+    }
+
+    enum class PinState{
+        STATE_AUTHEN,
+        STATE_CREATE,
+        STATE_CONFIRM
+    }
+    //------------------------------------------------- RECEIVE & SET PIN STATE TO BUNDLE ----------
+    companion object{
+        fun newInstance(state: PinState): FragmentSignupPin{
+            var bundle = Bundle()
+            bundle.putSerializable("STATE", state)
+            var fragment = FragmentSignupPin()
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        pinState = arguments?.getSerializable("STATE") as PinState
+    }
+    //______________________________________________________________________________________________
+    //------------------------------------------------------------------ SET PIN LISTENER ----------
+    fun setPinListener(listener: PinListener){
+        this.listener = listener
+    }
+    //______________________________________________________________________________________________
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -64,9 +101,8 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
         indicators.add(binding.regInputPin5)
         indicators.add(binding.regInputPin6)
         //__________________________________________________________________________________________
-
+        setState(pinState)
     }
-
     //--------------------------------------------------------------- FUN  WHEN ONCLICK NUMBER -----
     override fun onClick(v: View?) {
         when (v?.id) {
@@ -104,23 +140,64 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
                 removeText()
             }
             R.id.num_back -> {
-                fragmentManager!!.beginTransaction().apply {
-                    replace(R.id.layoutFragmentContainer, FragmentSignup(), "signup")
-                    commit()
+                when(pinState){
+                    PinState.STATE_CREATE ->{
+                            activity?.onBackPressed()
+                        clearFillPin()
+                    }
+                    PinState.STATE_CONFIRM ->{
+                        pinState = PinState.STATE_CREATE
+                        setState(pinState)
+                    }
+                    PinState.STATE_AUTHEN ->{
+                        activity?.onBackPressed()
+                        clearFillPin()
+                    }
                 }
+
             }
         }
     }
-
     //______________________________________________________________________________________________
     //----------------------------------------------------------------------FUN ADD PIN ------------
     fun addText(pinText: String) {
-        if (pin.length == 6){
-            return
-        }
         var sb = StringBuilder(pin).append(pinText)
         pin = sb.toString()
         notifyIndicatior()
+        //check change state
+        if (pin.length == 6){
+            when(pinState){
+                PinState.STATE_CREATE ->{
+                    pinState = PinState.STATE_CONFIRM
+                    setState(pinState)
+                }
+                PinState.STATE_CONFIRM ->{
+                    confirmPin = pin
+                    if(confirmPin == firstPin){
+                        Toast.makeText(context,"Sucess",Toast.LENGTH_LONG).show()
+                        activity!!.startActivity(Intent(activity,LoginActivity::class.java))
+                        listener?.onSuccess(confirmPin)
+                    }else{
+                        pinState = PinState.STATE_CREATE
+                        setState(pinState)
+                    }
+                }
+                PinState.STATE_AUTHEN ->{
+                    if(pin == "222222"){
+                        fragmentManager!!.beginTransaction().apply {
+                            replace(R.id.layoutFragmentMainPage, FragmentHomePage())
+                            commit()
+                        }
+                    }else{
+                        Toast.makeText(context,"PIN fail",Toast.LENGTH_LONG).show()
+                        clearFillPin()
+                        failCount +=1
+                        listener?.onFail(failCount)
+                    }
+                }
+            }
+            return
+        }
     }
 
     //______________________________________________________________________________________________
@@ -133,12 +210,10 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
         pin = sb.toString()
         notifyIndicatior()
     }
-
     //______________________________________________________________________________________________
     //---------------------------------------------------------------- SET BACKGROUND WHEN INPUT ---
     fun notifyIndicatior() {
         indicators.forEachIndexed { index, view ->
-
             view.setBackgroundResource(
                 when {
                     index < pin.length -> R.drawable.input_pin2
@@ -150,6 +225,33 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
             }else{
                 view.setBackgroundResource(R.drawable.input_pin)
             }*/
+        }
+    }
+    //______________________________________________________________________________________________
+    //---------------------------------------------------------------- SET PIN STATE ---------------
+    fun setState(state : PinState){
+        when(state){
+            PinState.STATE_AUTHEN -> {
+                binding.tvTitle.text = "Enter PIN Code"
+            }
+            PinState.STATE_CREATE -> {
+                clearFillPin()
+                confirmPin = ""
+                binding.tvTitle.text = "Create PIN Code"
+            }
+            PinState.STATE_CONFIRM -> {
+                binding.tvTitle.text = "Confirm PIN Code"
+                 firstPin = pin
+                clearFillPin()
+            }
+        }
+    }
+    //______________________________________________________________________________________________
+    //------------------------------------------------------- CLEAR FIILL PIN AND SET EMPTY PIN ----
+    fun clearFillPin(){
+        pin = ""
+        indicators.forEachIndexed { index, view ->
+                view.setBackgroundResource(R.drawable.input_pin)
         }
     }
     //______________________________________________________________________________________________

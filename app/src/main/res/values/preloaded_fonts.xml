@@ -2,12 +2,23 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abril_fatface</item>
+        <item>@font/aclonica</item>
         <item>@font/acme</item>
+        <item>@font/aldrich</item>
         <item>@font/alegreya_sans</item>
+        <item>@font/alegreya_sans_sc</item>
         <item>@font/allan</item>
+        <item>@font/allerta</item>
         <item>@font/amarante</item>
+        <item>@font/amiko_semibold</item>
+        <item>@font/antic</item>
+        <item>@font/anton</item>
+        <item>@font/atomic_age</item>
+        <item>@font/biryani_light</item>
         <item>@font/caesar_dressing</item>
         <item>@font/cantarell_italic</item>
         <item>@font/changa_light</item>
+        <item>@font/david_libre</item>
+        <item>@font/fugaz_one</item>
     </array>
 </resources>

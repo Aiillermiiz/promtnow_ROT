@@ -7,7 +7,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".register.RegisterActivity">
-
         <FrameLayout
             android:id="@+id/layoutFragmentContainer"
             android:layout_width="match_parent"

@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".pending.FragmentPending">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".approve.FragmentApprove">
+        <RelativeLayout
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:background="#111f4d"
+                android:id="@+id/rel_top"
+                android:paddingTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text_top"
+                    android:text="Pending"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="28dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/rel_pro_set"
+                android:layout_below="@+id/rel_top"
+                android:background="#111f4d"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+            </TextView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_above="@+id/rel_btn"
+                android:layout_below="@+id/rel_pro_set"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    app:spanCount="2"
+                    tools:itemCount="9"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:listitem="@layout/list_item_of_pending"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+            <TextView
+                android:background="@drawable/card_btn_add"
+                android:id="@+id/icon_check"
+                android:drawableTop="@drawable/main_icon_pending"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rel_top"
+                android:layout_height="70dp"/>
+            <RelativeLayout
+                android:id="@+id/rel_btn"
+                android:background="#111f4d"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <Button
+                    android:id="@+id/approved_btn_add"
+                    android:drawableRight="@drawable/add_back"
+                    android:background="@drawable/signup_btn_back"
+                    android:padding="5dp"
+                    android:layout_margin="4dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
 
-</FrameLayout>
+    </FrameLayout>
+</layout>

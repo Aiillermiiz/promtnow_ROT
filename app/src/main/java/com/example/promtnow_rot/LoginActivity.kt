@@ -2,6 +2,7 @@ package com.example.promtnow_rot
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,7 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentTransaction
 import com.example.promtnow_rot.databinding.ActivityMainBinding
+import com.example.promtnow_rot.homepage.MainPageActivity
 import com.example.promtnow_rot.register.FragmentSignup
+import com.example.promtnow_rot.register.FragmentSignupPin
 import com.example.promtnow_rot.register.RegisterActivity
 
 
@@ -22,13 +25,10 @@ class LoginActivity : AppCompatActivity() {
 
         //---------------------------------------------------------------------- CLICK BUTTON ------
         rId.btnLogin.setOnClickListener {
-            //Toast.makeText(this,rId.inputGmail.text,Toast.LENGTH_LONG).show()
+            startActivity(Intent(this, MainPageActivity::class.java))
         }
         rId.btnSignup.setOnClickListener {
-
            startActivity(Intent(this, RegisterActivity::class.java))
-
-            //Toast.makeText(this,"Singup",Toast.LENGTH_LONG).show()
         }
         //__________________________________________________________________________________________
         //---------------------------------------------------------------- CHECK EDITTEXT EMPTY ----

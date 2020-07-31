@@ -11,8 +11,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.layoutFragmentContainer, FragmentSignup(),"Regis")
-            addToBackStack("Regis")
+            replace(R.id.layoutFragmentContainer, FragmentSignup())
             commit()
         }
     }
