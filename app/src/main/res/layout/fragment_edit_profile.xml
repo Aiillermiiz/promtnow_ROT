@@ -12,38 +12,60 @@
             <TextView
                 android:id="@+id/editpro_text_editpro"
                 android:text="Edit profile"
-                android:background="#111f4d"
                 android:padding="10dp"
                 android:textStyle="bold"
                 android:layout_below="@+id/rel_top"
-                android:textSize="35dp"
-                android:textColor="#FFFFFF"
+                android:textSize="28dp"
+                android:textColor="#283149"
                 android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/editpro_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/btn_back_top"
+                android:padding="4dp" />
+            <TextView
+                android:id="@+id/editpro_btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/changepass_icon_check"
+                android:padding="9dp" />
             <RelativeLayout
                 android:layout_below="@+id/editpro_text_editpro"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <RelativeLayout
                     android:id="@+id/rel_form"
-                    android:padding="20dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <LinearLayout
+                    <RelativeLayout
                         android:id="@+id/lay_1"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="93dp"
+                        android:layout_height="93dp">
                         <TextView
+                            android:id="@+id/image"
                             android:background="@drawable/signup_icon_bg"
-                            android:drawableLeft="@drawable/signup_icon"
                             android:layout_width="90dp"
-                            android:padding="10dp"
+                            android:padding="15dp"
                             android:layout_height="90dp"/>
-                    </LinearLayout>
+                        <TextView
+                            android:id="@+id/btn_image"
+                            android:background="@drawable/card_btn_add_list"
+                            android:padding="5dp"
+                            android:drawableLeft="@drawable/ic_photo_camera_black_24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
                     <EditText
                         android:layout_marginTop="15dp"
                         android:padding="10dp"
@@ -63,18 +85,18 @@
                         android:layout_toEndOf="@+id/lay_1"
                         android:layout_height="wrap_content"/>
                     <EditText
-                        android:id="@+id/editpro_input_password"
-                        android:hint="password..."
-                        android:textSize="18dp"
+                        android:id="@+id/editpro_input_name"
+                        android:hint="name..."
+                        android:textSize="20dp"
                         android:layout_marginTop="15dp"
                         android:padding="10dp"
-                        android:background="@drawable/card_input"
                         android:layout_marginLeft="10dp"
                         android:inputType="text"
-                        android:textColor="#333333"
-                        android:textColorHint="#5C5C5C"
+                        android:textColor="#666D77"
+                        android:background="@drawable/card_input"
+                        android:textColorHint="#666D77"
                         android:drawablePadding="10dp"
-                        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+                        android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
                         android:layout_below="@+id/editpro_input_gmail"
                         android:paddingRight="10dp"
                         android:layout_width="match_parent"
@@ -87,24 +109,8 @@
                         android:textColor="#5C5C5C"
                         android:text="---------------------  Your information  ---------------------"
                         android:gravity="center"
-                        android:layout_below="@+id/editpro_input_password"
+                        android:layout_below="@+id/editpro_input_name"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                    <EditText
-                        android:id="@+id/editpro_input_name"
-                        android:hint="name..."
-                        android:textColorHint="#5C5C5C"
-                        android:textSize="18dp"
-                        android:layout_marginTop="15dp"
-                        android:padding="10dp"
-                        android:background="@drawable/card_input"
-                        android:inputType="text"
-                        android:drawablePadding="10dp"
-                        android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
-                        android:paddingRight="10dp"
-                        android:textColor="#333333"
-                        android:layout_width="match_parent"
-                        android:layout_below="@+id/text_yourinfo"
                         android:layout_height="wrap_content"/>
                     <EditText
                         android:id="@+id/editpro_input_staff_code"
@@ -120,7 +126,7 @@
                         android:paddingRight="10dp"
                         android:drawablePadding="10dp"
                         android:layout_width="match_parent"
-                        android:layout_below="@+id/editpro_input_name"
+                        android:layout_below="@+id/text_yourinfo"
                         android:layout_height="wrap_content"/>
                     <RelativeLayout
                         android:id="@+id/rel_dep"
@@ -164,33 +170,8 @@
                             android:layout_toEndOf="@+id/draw_pos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:entries="@array/department" />
+                            android:entries="@array/position" />
                     </RelativeLayout>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/rel_btn"
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:drawableLeft="@drawable/add_back"
-                        android:id="@+id/editpro_btn_back"
-                        android:layout_width="58dp"
-                        android:layout_margin="4dp"
-                        android:layout_alignParentLeft="true"
-                        android:padding="3dp"
-                        android:background="@drawable/signup_btn_back"
-                        android:layout_height="58dp"/>
-                    <Button
-                        android:drawableStart="@drawable/ic_edit_black_24dp"
-                        android:id="@+id/editpro_btn_edit"
-                        android:layout_width="58dp"
-                        android:layout_alignParentRight="true"
-                        android:enabled="false"
-                        android:layout_margin="4dp"
-                        android:padding="8dp"
-                        android:background="@drawable/signup_btn_signup_disable"
-                        android:layout_height="58dp"/>
                 </RelativeLayout>
             </RelativeLayout>
 

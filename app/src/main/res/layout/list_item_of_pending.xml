@@ -18,7 +18,7 @@
                 android:text="12-7-2563"
                 android:drawableTop="@drawable/ic_date_range_black_24dp"
                 android:textColor="#333333"
-                android:textSize="25dp"
+                android:textSize="22dp"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -27,7 +27,7 @@
                 android:text="เลขที่เอกสาร"
                 android:layout_below="@+id/add_date_show"
                 android:textColor="#333333"
-                android:textSize="17dp"
+                android:textSize="14dp"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -37,7 +37,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/add_text"
                 android:textColor="#381673"
-                android:textSize="20dp"
+                android:textSize="17dp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 <FrameLayout
     android:layout_width="match_parent"
+    android:background="#eeeeee"
     android:layout_height="match_parent"
     tools:context=".homepage.FragmentHomePage">
         <RelativeLayout
-            android:background="#F4F4F4"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MainPageActivity">
             <RelativeLayout
                 android:id="@+id/rel_top"
-                android:padding="15dp"
+                android:padding="10dp"
                 android:background="@drawable/card_main_top"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -22,20 +23,43 @@
                     android:textColor="#ffffff"
                     android:textSize="28dp"
                     android:textStyle="bold"
-                    android:text="Reimbursement of Traveling"
+                    android:text="Main Page"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rel_menu"
-                android:paddingTop="50dp"
-                android:paddingBottom="20dp"
-                android:layout_below="@+id/rel_pro_set"
+                android:layout_below="@+id/rel_top"
                 android:background="#ffffff"
+                android:paddingTop="10dp"
+                android:elevation="10dp"
+                android:paddingBottom="40dp"
                 android:layout_width="match_parent"
                 android:layout_centerHorizontal="true"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text_wel"
+                    android:gravity="center"
+                    android:textSize="17dp"
+                    android:textColor="#404b69"
+                    android:text="Welcome to Reimbursement of Traveling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/text_pls"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/text_wel"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:drawableBottom="@drawable/ic_arrow_downward_black_24dp"
+                    android:textColor="#404b69"
+                    android:text="Please select menu to do"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
                 <GridLayout
+                    android:layout_below="@+id/text_pls"
+                    android:layout_marginTop="10dp"
                     android:layout_centerHorizontal="true"
                     android:rowCount="3"
                     android:columnCount="3"
@@ -92,17 +116,16 @@
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rel_pro_set"
-                android:layout_below="@+id/rel_top"
-                android:background="#111f4d"
-                android:paddingBottom="10dp"
+                android:background="@drawable/card_main_top"
+                android:layout_alignParentBottom="true"
                 android:paddingLeft="25dp"
                 android:paddingRight="25dp"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="65dp">
                 <Button
                     android:id="@+id/main_profile"
                     android:textSize="15dp"
-                    android:background="@drawable/card_main_btn_profile"
+                    android:background="#00222831"
                     android:text="profile"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
@@ -112,7 +135,7 @@
                     android:textColor="#ffffff"
                     android:drawableLeft="@drawable/ic_account_circle_black_24dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"/>
+                    android:layout_height="match_parent"/>
                 <Button
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
@@ -122,20 +145,21 @@
                     android:textColor="#ffffff"
                     android:paddingRight="10dp"
                     android:paddingLeft="10dp"
-                    android:background="@drawable/card_main_btn_setting"
+                    android:background="#00222831"
                     android:text="setting"
                     android:drawablePadding="5dp"
                     android:drawableLeft="@drawable/main_icon_setting"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"/>
+                    android:layout_height="match_parent"/>
             </RelativeLayout>
             <TextView
                 android:background="@drawable/card_btn_add"
                 android:id="@+id/main_add"
+                android:layout_marginBottom="5dp"
                 android:drawableTop="@drawable/ic_add_circle_black_24dp"
                 android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/rel_top"
                 android:layout_height="100dp"/>
         </RelativeLayout>
 

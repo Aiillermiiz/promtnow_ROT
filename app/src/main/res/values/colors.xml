@@ -6,4 +6,6 @@
     <color name="colorRegBtnSignDis">#7E89C5</color>
     <color name="colorRegBtnSignEna">#3F51B5</color>
     <color name="colorwhite">#FFFFFF</color>
+    <color name="log1">#8DAABABF</color>
+    <color name="log2">#283149</color>
 </resources>

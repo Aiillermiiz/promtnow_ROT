@@ -26,10 +26,10 @@ class FragmentPending : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.approvedBtnAdd.setOnClickListener {
+        binding.pendingBtnBack.setOnClickListener {
             fragmentManager?.beginTransaction()?.apply {
-                replace(R.id.layoutFragmentPending, FragmentEditPending())
-                addToBackStack("approve")
+                replace(R.id.layoutFragmentPending, FragmentListPending())
+                addToBackStack("pending")
                 commit()
             }
         }

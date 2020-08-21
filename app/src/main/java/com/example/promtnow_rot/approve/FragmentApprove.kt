@@ -28,13 +28,12 @@ class FragmentApprove : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.approvedBtnAdd.setOnClickListener {
+        binding.approvedBtnBack.setOnClickListener {
             fragmentManager?.beginTransaction()?.apply {
                 replace(R.id.layoutFragmentApprove,FragmentListApprove())
                 addToBackStack("approve")
                 commit()
             }
         }
-
-    }
+    }//on view create
 }

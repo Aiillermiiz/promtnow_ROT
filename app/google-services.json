@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "357867904648",
+    "firebase_url": "https://reimbursement-of-traveling.firebaseio.com",
+    "project_id": "reimbursement-of-traveling",
+    "storage_bucket": "reimbursement-of-traveling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357867904648:android:c778ed6f68f54e1217893d",
+        "android_client_info": {
+          "package_name": "com.example.promtnow_rot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357867904648-pke263q9rdk3e6l6174bkak15idg1eds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.promtnow_rot",
+            "certificate_hash": "cdecbf85f0d92a03710ba7b5399d822a7f523c57"
+          }
+        },
+        {
+          "client_id": "357867904648-b2uo4oeb0uvoj0ng2ht9fgcbiebjhmsc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANto2ecn9_cZncJuPHU02H-YL6Bh7hhH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357867904648-b2uo4oeb0uvoj0ng2ht9fgcbiebjhmsc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,24 +3,74 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sing_up_here"><u>Sign up here</u></string>
     <string-array name="department">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Accounting</item>
+        <item>font-end</item>
+        <item>back-end</item>
+        <item>Support</item>
     </string-array>
     <string-array name="type">
         <item>ไป-กลับ</item>
         <item>ไป</item>
         <item>กลับ</item>
         <item>ต่อที่อื่น</item>
-
     </string-array>
-    <string name="country_prompt">Choose a country</string>
-    <string name="sing_up_here"><u>Sing up here</u></string>
+    <string-array name="by">
+        <item>TAXI</item>
+        <item>CAR</item>
+        <item>BUS</item>
+        <item>BTS</item>
+        <item>MRT</item>
+        <item>MTC</item>
+        <item>VAN</item>
+    </string-array>
+    <string-array name="position">
+        <item>Managing Director</item>
+        <item>VP Product Development</item>
+        <item>Research and Deveiopment Manager</item>
+        <item>Senior Mobile Developer</item>
+        <item>Graphic Designer</item>
+        <item>Senior Systems Analyst</item>
+        <item>Server Programmer</item>
+        <item>Senior Software Developer</item>
+        <item>Business Operation Manager</item>
+        <item>Mobile Developer</item>
+        <item>Android Developer</item>
+        <item>Project Manager</item>
+        <item>Senior Java Developer</item>
+        <item>Human Resources Manager</item>
+        <item>UI/UX Designer</item>
+        <item>Customer Service Support</item>
+        <item>Business Development Manager</item>
+        <item>Business Admin</item>
+        <item>Executive Director</item>
+        <item>VP – Global Business Planning</item>
+        <item>VP - Service Delivery</item>
+        <item>Senior Accounting</item>
+        <item>Product Development Specialist</item>
+        <item>Java Developer</item>
+        <item>System Analyst</item>
+        <item>Junior System Analyst</item>
+        <item>PHP Developer</item>
+        <item>IOS Developer</item>
+        <item>Software Tester</item>
+        <item>VP Service Operation</item>
+        <item>Product Design</item>
+        <item>System Engineer</item>
+        <item>Server Developer</item>
+        <item>Call Center and Helpdesk</item>
+        <item>Accounting</item>
+        <item>Accounting Manager</item>
+        <item>.Net Developer</item>
+        <item>QA Lead</item>
+        <item>Junior Business Analyst</item>
+        <item>R/D Engineering</item>
+        <item>IT Consult</item>
+        <item>Software Developer</item>
+        <item>Business Analyst</item>
+        <item>Junior System Analysis</item>
+        <item>Infra Engineer</item>
+    </string-array>
 
 </resources>

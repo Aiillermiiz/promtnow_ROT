@@ -9,37 +9,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
-                android:background="#111f4d"
+                android:background="#ffffff"
                 android:id="@+id/rel_top"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/text_top"
-                    android:text="Reimbursement of Traveling"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
                     android:textSize="28dp"
+                    android:textStyle="bold"
+                    android:textColor="#283149"
                     android:layout_centerHorizontal="true"
-                    android:gravity="center"
-                    android:layout_alignParentTop="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:layout_below="@+id/text_top"
-                    android:drawableRight="@drawable/ic_add_black_24dp"
-                    android:textSize="21dp"
-                    android:textColor="#CDDC39"
-                    android:layout_centerHorizontal="true"
-                    android:drawablePadding="5dp"
-                    android:text="Specify your request"
+                    android:text="Your request"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </RelativeLayout>
-
+            <TextView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/btn_back_top"
+                android:padding="4dp" />
+            <TextView
+                android:id="@+id/add_btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/changepass_icon_check"
+                android:padding="9dp" />
             <LinearLayout
-                android:background="#FAFAFA"
+                android:background="#ffffff"
                 android:orientation="horizontal"
                 android:weightSum="2"
                 android:paddingTop="5dp"
@@ -59,7 +58,7 @@
                         android:drawablePadding="5dp"
                         android:layout_height="wrap_content"
                         android:text="Khwanchai"
-                        android:textColor="#000000"
+                        android:textColor="#283149"
                         android:textSize="18dp" />
                     <RelativeLayout
                         android:layout_below="@+id/name"
@@ -72,8 +71,8 @@
                             android:layout_width="wrap_content"
                             android:drawablePadding="5dp"
                             android:layout_height="wrap_content"
-                            android:text="Code/"
-                            android:textColor="#000000"
+                            android:text="Staff code/"
+                            android:textColor="#283149"
                             android:textSize="18dp" />
                         <TextView
                             android:layout_toEndOf="@+id/text_code"
@@ -81,7 +80,7 @@
                             android:drawablePadding="5dp"
                             android:layout_height="wrap_content"
                             android:text="8834"
-                            android:textColor="#8598FF"
+                            android:textColor="#3F51B5"
                             android:textSize="18dp" />
                     </RelativeLayout>
 
@@ -97,8 +96,7 @@
                         android:drawablePadding="5dp"
                         android:text="Request date"
                         android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
+                        android:textColor="#283149"
                         android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -106,6 +104,9 @@
                         android:id="@+id/add_date"
                         android:layout_below="@+id/text_req"
                         android:textSize="17dp"
+                        android:layout_marginRight="11dp"
+                        android:textColor="#283149"
+                        android:textColorHint="#283149"
                         android:hint="mm/dd/yy"
                         android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
@@ -113,8 +114,9 @@
                 </RelativeLayout>
             </LinearLayout>
             <RelativeLayout
-                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
                 android:id="@+id/rel_pos"
+                android:background="#ffffff"
                 android:paddingBottom="10dp"
                 android:layout_below="@+id/rel_rd"
                 android:layout_width="match_parent"
@@ -123,6 +125,7 @@
                     android:id="@+id/department"
                     android:drawableLeft="@drawable/ic_location_searching_black_24dp"
                     android:text="developer"
+                    android:textColor="#283149"
                     android:drawablePadding="5dp"
                     android:textSize="18dp"
                     android:layout_width="wrap_content"
@@ -131,6 +134,7 @@
                     android:id="@+id/con"
                     android:text="/"
                     android:textSize="18dp"
+                    android:textColor="#f73859"
                     android:layout_toEndOf="@id/department"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -139,6 +143,7 @@
                     android:layout_toEndOf="@+id/con"
                     android:text="android developer"
                     android:textSize="18dp"
+                    android:textColor="#283149"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </RelativeLayout>
@@ -146,12 +151,12 @@
                 android:id="@+id/line"
                 android:layout_below="@+id/rel_pos"
                 android:layout_width="match_parent"
-                android:background="#979797"
+                android:background="#283149"
                 android:layout_height="1dp"/>
             <RelativeLayout
                 android:background="#ffffff"
                 android:id="@+id/rel_list"
-                android:layout_above="@+id/text_price"
+                android:layout_above="@+id/rel_num"
                 android:layout_below="@+id/line"
                 android:layout_width="match_parent"
                 android:layout_alignParentLeft="true"
@@ -163,9 +168,21 @@
                     tools:listitem="@layout/list_item_of_add_main"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
+            <TextView
+                android:id="@+id/add_btn_add"
+                android:layout_width="65dp"
+                android:background="@drawable/card_btn_add_list"
+                android:gravity="center"
+                android:textSize="45dp"
+                android:layout_margin="6dp"
+                android:textColor="#ffffff"
+                android:text="+"
+                android:layout_alignParentRight="true"
+                android:layout_above="@+id/rel_num"
+                android:layout_height="65dp"/>
             <RelativeLayout
                 android:id="@+id/rel_num"
-                android:background="#DFF5FF"
+                android:background="#dbedf3"
                 android:padding="6dp"
                 android:layout_above="@+id/text_price"
                 android:layout_width="match_parent"
@@ -188,10 +205,10 @@
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/text_price"
-                android:background="#F8F8F8"
+                android:background="#404b69"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:layout_above="@+id/rel_btn"
+                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
                 <TextView
@@ -202,55 +219,20 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="sans-serif"
                     android:text="Total"
-                    android:textColor="#404040"
+                    android:textColor="#ffffff"
                     android:textSize="30dp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/add_price_show"
                     android:textSize="29dp"
                     android:text="1500.00"
-                    android:textColor="#8BC34A"
+                    android:textColor="#B2FA5E"
                     android:layout_toEndOf="@+id/text_total"
                     android:gravity="right"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/rel_btn"
-                android:background="#111f4d"
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="65dp">
-                <Button
-                    android:drawableRight="@drawable/add_back"
-                    android:background="@drawable/signup_btn_back"
-                    android:padding="5dp"
-                    android:layout_margin="4dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"/>
-                <Button
-                    android:id="@+id/add_btn_submit"
-                    android:padding="3dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="4dp"
-                    android:drawableRight="@drawable/changepass_icon_check"
-                    android:background="@drawable/add_btn_submit"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"/>
-                <Button
-                    android:id="@+id/add_btn_add"
-                    android:drawableRight="@drawable/ic_playlist_add_black_24dp"
-                    android:layout_width="58dp"
-                    android:padding="3dp"
-                    android:layout_margin="4dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/form_add_btn_add_list"
-                    android:layout_height="58dp"/>
             </RelativeLayout>
         </RelativeLayout>
 

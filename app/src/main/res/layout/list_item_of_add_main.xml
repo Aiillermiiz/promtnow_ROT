@@ -6,6 +6,7 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:id="@+id/rel_top"
+            android:background="#ffffff"
             android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -15,7 +16,7 @@
                 android:weightSum="3"
                 android:gravity="center"
                 android:padding="5dp"
-                android:background="#E8E8E8"
+                android:background="#FAFAFA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <RelativeLayout
@@ -27,7 +28,7 @@
                         android:id="@+id/date"
                         android:textSize="19dp"
                         android:text="4-sep-18"
-                        android:textColor="#000000"
+                        android:textColor="#283149"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </RelativeLayout>
@@ -38,7 +39,7 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="TIS"
-                        android:textColor="#000000"
+                        android:textColor="#283149"
                         android:textSize="17dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -51,10 +52,10 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="ติดต่อราชการ"
-                        android:padding="3dp"
-                        android:background="#DCF11225"
                         android:textStyle="bold"
-                        android:textColor="#FFFFFF"
+                        android:padding="4dp"
+                        android:background="@drawable/card_list_reson"
+                        android:textColor="#f73859"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </RelativeLayout>
@@ -70,7 +71,7 @@
                 <TextView
                     android:id="@+id/text_from"
                     android:text="Form"
-                    android:textColor="#000000"
+                    android:textColor="#404b69"
                     android:layout_centerVertical="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -78,7 +79,7 @@
                     android:id="@+id/from"
                     android:layout_toEndOf="@+id/text_from"
                     android:text="PN"
-                    android:textColor="#2196F3"
+                    android:textColor="#3F51B5"
                     android:textSize="19dp"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
@@ -87,7 +88,7 @@
                     android:id="@+id/text_to"
                     android:layout_centerVertical="true"
                     android:text="To"
-                    android:textColor="#000000"
+                    android:textColor="#404b69"
                     android:layout_marginLeft="5dp"
                     android:layout_toEndOf="@+id/from"
                     android:layout_width="wrap_content"
@@ -96,7 +97,7 @@
                     android:id="@+id/to"
                     android:layout_toEndOf="@+id/text_to"
                     android:text="RD#7"
-                    android:textColor="#2196F3"
+                    android:textColor="#3F51B5"
                     android:textSize="19dp"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
@@ -104,7 +105,7 @@
                 <TextView
                     android:id="@+id/text_by"
                     android:text="| By"
-                    android:textColor="#000000"
+                    android:textColor="#404b69"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
                     android:layout_toEndOf="@+id/to"
@@ -113,7 +114,7 @@
                 <TextView
                     android:id="@+id/by"
                     android:text="TEXI"
-                    android:textColor="#2196F3"
+                    android:textColor="#3F51B5"
                     android:textSize="19dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toEndOf="@+id/text_by"
@@ -123,7 +124,7 @@
                     android:id="@+id/type"
                     android:layout_toEndOf="@+id/by"
                     android:text="(ไป-กลับ)"
-                    android:textColor="#2196F3"
+                    android:textColor="#3F51B5"
                     android:textSize="17dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
@@ -142,7 +143,7 @@
                 android:textSize="17dp"
                 android:paddingRight="10dp"
                 android:paddingLeft="20dp"
-                android:textColor="#000000"
+                android:textColor="#283149"
                 android:text="เดินทางไปติดต่อขอลดอัตรา อากรของ TIS"
                 android:layout_below="@+id/line"
                 android:layout_width="match_parent"
@@ -161,13 +162,13 @@
                 android:gravity="right"
                 android:textStyle="italic"
                 android:text="150.00"
-                android:textColor="#4CAF50"
+                android:textColor="#39E34F"
                 android:paddingRight="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
         <TextView
-            android:background="#FFFFFF"
+            android:background="#F4F4F4"
             android:layout_below="@+id/rel_top"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>

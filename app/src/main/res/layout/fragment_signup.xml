@@ -7,94 +7,82 @@
         tools:context=".register.FragmentSignup">
 
 <RelativeLayout
-    android:background="@drawable/bg_1"
+    android:background="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/text_signup"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/reg_btn_back_login"
+        android:padding="4dp"
+        android:drawableLeft="@drawable/btn_back_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/reg_btn_signup"
+        android:padding="4dp"
+        android:layout_alignParentRight="true"
+        android:drawableLeft="@drawable/btn_next_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/text"
+            android:padding="5dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:text="Sig"
-            android:textStyle="italic"
-            android:textColor="#FFFFFF"
-            android:textSize="50dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="N"
+            android:fontFamily="@font/amiko_bold"
+            android:text="Sign up"
             android:textStyle="italic"
             android:rotation="0"
-            android:textColor="#5FCBFB"
-            android:textSize="48dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text=" up"
-            android:textStyle="italic"
-            android:textColor="#A8A8A8"
-            android:textSize="50dp" />
-    </LinearLayout>
+            android:textColor="#283149"
+            android:textSize="40dp" />
+
         <RelativeLayout
             android:id="@+id/rel_input"
-            android:padding="20dp"
-            android:layout_centerInParent="true"
+            android:layout_below="@+id/text"
+            android:paddingTop="20dp"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/text_pi"
+                android:gravity=""
+                android:textSize="24dp"
+                android:paddingBottom="5dp"
+                android:textColor="#404b69"
+                android:text="Private Information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         <RelativeLayout
             android:id="@+id/rel_form"
-            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/text_pi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <LinearLayout
-                android:id="@+id/lay_1"
-                android:layout_alignParentTop="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:background="@drawable/signup_icon_bg"
-                    android:drawableLeft="@drawable/signup_icon"
-                    android:layout_width="90dp"
-                    android:padding="10dp"
-                    android:layout_height="90dp"/>
-            </LinearLayout>
             <EditText
                 android:id="@+id/reg_input_gmail"
                 android:hint="e-mail address..."
+                android:backgroundTint="#404b69"
                 android:padding="10dp"
-                android:background="@drawable/card_input"
                 android:layout_alignParentTop="true"
-                android:textColorHint="#666D77"
-                android:textColor="#666D77"
-                android:textSize="20dp"
+                android:textColorHint="#C7CDDF"
+                android:textColor="#283149"
+                android:textSize="23dp"
                 android:inputType="textEmailAddress"
-                android:layout_marginLeft="10dp"
                 android:drawablePadding="10dp"
-                android:paddingRight="10dp"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:layout_width="match_parent"
-                android:layout_toEndOf="@+id/lay_1"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/reg_input_password"
                 android:hint="password..."
-                android:textSize="20dp"
+                android:textSize="23dp"
                 android:layout_marginTop="15dp"
                 android:padding="10dp"
-                android:background="@drawable/card_input"
-                android:layout_marginLeft="10dp"
-                android:inputType="text"
-                android:textColor="#666D77"
-                android:textColorHint="#666D77"
+                android:backgroundTint="#404b69"
+                android:inputType="textPassword"
+                android:textColor="#283149"
+                android:textColorHint="#C7CDDF"
                 android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
                 android:layout_below="@+id/reg_input_gmail"
@@ -103,80 +91,96 @@
                 android:layout_toEndOf="@+id/lay_1"
                 android:layout_height="wrap_content"/>
             <TextView
+                android:id="@+id/eyes"
+                android:textSize="20dp"
                 android:layout_marginTop="15dp"
-                android:id="@+id/text_yourinfo"
-                android:textSize="10dp"
-                android:textColor="#666D77"
-                android:text="---------------------  Your information  ---------------------"
-                android:gravity="center"
-                android:layout_below="@+id/reg_input_password"
-                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/ic_remove_red_eye_black_24dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/reg_input_gmail"
+                android:paddingRight="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/reg_input_name"
                 android:hint="name..."
-                android:textColorHint="#666D77"
-                android:textSize="20dp"
+                android:textColorHint="#C7CDDF"
+                android:textSize="23dp"
                 android:padding="10dp"
-                android:background="@drawable/card_input"
+                android:backgroundTint="#404b69"
                 android:inputType="text"
                 android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
                 android:paddingRight="10dp"
-                android:textColor="#666D77"
+                android:textColor="#283149"
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
-                android:layout_below="@+id/text_yourinfo"
+                android:layout_below="@+id/reg_input_password"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/text_ei"
+                android:layout_below="@+id/reg_input_name"
+                android:textSize="24dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="5dp"
+                android:textColor="#404b69"
+                android:text="Employee Information"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:id="@+id/reg_input_staff_code"
                 android:hint="staff code..."
-                android:textColor="#666D77"
-                android:textColorHint="#666D77"
-                android:textSize="20dp"
-                android:layout_marginTop="15dp"
-                android:inputType="text"
+                android:textColor="#283149"
+                android:textColorHint="#C7CDDF"
+                android:textSize="23dp"
+                android:inputType="number"
                 android:padding="10dp"
-                android:background="@drawable/card_input"
+                android:backgroundTint="#404b69"
                 android:drawableLeft="@drawable/ic_code_black_24dp"
                 android:paddingRight="10dp"
                 android:drawablePadding="10dp"
                 android:layout_width="match_parent"
-                android:layout_below="@+id/reg_input_name"
+                android:layout_below="@+id/text_ei"
                 android:layout_height="wrap_content"/>
             <RelativeLayout
                 android:id="@+id/rel_dep"
                 android:paddingLeft="5dp"
-                android:padding="10dp"
-                android:background="@drawable/card_input"
+                android:padding="5dp"
                 android:layout_marginTop="15dp"
                 android:layout_below="@+id/reg_input_staff_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/draw_dep"
+                    android:layout_marginLeft="5dp"
                     android:layout_centerVertical="true"
                     android:drawableLeft="@drawable/ic_account_balance_black_24dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <Spinner
                     android:id="@+id/spinner_dep"
+                    android:entries="@array/department"
                     android:layout_toEndOf="@+id/draw_dep"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/department" />
+                    android:layout_height="40dp" />
+                <TextView
+                    android:layout_below="@+id/spinner_dep"
+                    android:background="#404b69"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
             </RelativeLayout>
             <RelativeLayout
                 android:paddingLeft="5dp"
                 android:id="@+id/rel_pos"
-                android:padding="10dp"
-                android:background="@drawable/card_input"
+                android:padding="5dp"
                 android:layout_marginTop="15dp"
                 android:layout_below="@+id/rel_dep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/draw_pos"
+                    android:layout_marginLeft="5dp"
                     android:layout_centerVertical="true"
                     android:drawableLeft="@drawable/ic_location_searching_black_24dp"
                     android:layout_width="wrap_content"
@@ -185,38 +189,16 @@
                     android:id="@+id/spinner_pos"
                     android:layout_toEndOf="@+id/draw_pos"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/department" />
+                    android:layout_height="40dp"
+                    android:entries="@array/position" />
+                <TextView
+                    android:layout_below="@+id/spinner_pos"
+                    android:background="#404b69"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
             </RelativeLayout>
         </RelativeLayout>
         </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/rel_btn"
-        android:padding="4dp"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:drawableLeft="@drawable/add_back"
-            android:id="@+id/reg_btn_back_login"
-            android:layout_width="58dp"
-            android:padding="3dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/signup_btn_back"
-            android:layout_height="58dp"/>
-
-        <Button
-            android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
-            android:id="@+id/reg_btn_signup"
-            android:layout_width="58dp"
-            android:enabled="false"
-            android:padding="3dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/signup_btn_signup_disable"
-            android:layout_height="58dp"/>
-    </RelativeLayout>
 
 </RelativeLayout>
     </FrameLayout>

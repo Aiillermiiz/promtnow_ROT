@@ -4,19 +4,24 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="Reimbursement of Traveling"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".profile.ProfileActivity"></activity>
         <activity android:name=".reject.RejectActivity" />
         <activity android:name=".pending.PendingActivity" />
         <activity android:name=".approve.ApproveActivity" />
-        <activity android:name=".add.AddActivity" >
+        <activity android:name=".add.AddActivity"
+                  android:windowSoftInputMode="adjustPan">
 
         </activity>
-        <activity android:name=".setting.SettingActivity" />
+        <activity android:name=".setting.SettingActivity"
+                  android:windowSoftInputMode="adjustPan">
+
+        </activity>
         <activity android:name=".homepage.MainPageActivity">
 
         </activity>
@@ -27,7 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".register.RegisterActivity"
+                  android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan" />

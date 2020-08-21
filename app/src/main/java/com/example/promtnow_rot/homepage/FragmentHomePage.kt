@@ -20,8 +20,9 @@ import com.example.promtnow_rot.setting.SettingActivity
 /**
  * A simple [Fragment] subclass.
  */
-class FragmentHomePage : Fragment() {
+class FragmentHomePage : Fragment(), View.OnClickListener {
         lateinit var binding:FragmentHomePageBinding
+        //data user
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,28 +31,40 @@ class FragmentHomePage : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home_page, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.mainSetting.setOnClickListener {
-            startActivity(Intent(activity,SettingActivity::class.java))
-        }
-        binding.mainAdd.setOnClickListener {
-            startActivity(Intent(activity,AddActivity::class.java))
-        }
-        binding.mainApprove.setOnClickListener {
-            startActivity(Intent(activity,ApproveActivity::class.java))
-        }
-        binding.mainPending.setOnClickListener {
-            startActivity(Intent(activity,PendingActivity::class.java))
-        }
-        binding.mainReject.setOnClickListener {
-            startActivity(Intent(activity,RejectActivity::class.java))
-        }
-        binding.mainProfile.setOnClickListener {
-            startActivity(Intent(activity,ProfileActivity::class.java))
-        }
-
+        //-------------------------------------------------------------------- ONCLICK -------------
+        binding.mainSetting.setOnClickListener(this)
+        binding.mainAdd.setOnClickListener(this)
+        binding.mainApprove.setOnClickListener(this)
+        binding.mainPending.setOnClickListener(this)
+        binding.mainReject.setOnClickListener(this)
+        binding.mainProfile.setOnClickListener(this)
+        //__________________________________________________________________________________________
     }
+    //-------------------------------------------------------------------- FUN ONCLICK -------------
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.main_setting -> {
+                startActivity(Intent(activity,SettingActivity::class.java))
+            }
+            R.id.main_add -> {
+                startActivity(Intent(activity,AddActivity::class.java))
+            }
+            R.id.main_approve -> {
+                startActivity(Intent(activity,ApproveActivity::class.java))
+            }
+            R.id.main_pending -> {
+                startActivity(Intent(activity,PendingActivity::class.java))
+            }
+            R.id.main_reject -> {
+                startActivity(Intent(activity,RejectActivity::class.java))
+            }
+            R.id.main_profile -> {
+               startActivity(Intent(activity,ProfileActivity::class.java))
+            }
+        }//when
+    }
+    //______________________________________________________________________________________________
 
 }

@@ -1,135 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".profile.FragmentProfile">
-    <RelativeLayout
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".profile.FragmentProfile">
+
         <RelativeLayout
-            android:id="@+id/rel_top"
-            android:padding="15dp"
-            android:background="@drawable/card_main_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/text_rot"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textSize="28dp"
-                android:textStyle="bold"
-                android:text="Profile"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+            <RelativeLayout
+                android:id="@+id/rel_top"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/text_rot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Profile"
+                    android:textColor="#283149"
+                    android:textSize="28dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/profile_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/btn_back_top"
+                android:padding="4dp" />
+            <TextView
+                android:id="@+id/profile_btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/btn_edit_color"
+                android:padding="10dp" />
+            <RelativeLayout
+                android:id="@+id/rel_img"
+                android:paddingBottom="10dp"
+                android:paddingTop="0dp"
+                android:layout_below="@+id/rel_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/img"
+                    android:background="@drawable/signup_icon_bg"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/pi"
+                android:paddingLeft="10dp"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel_img"
+                android:background="#dbedf3"
+                android:text="Private infomation"
+                android:textColor="#283149"
+                android:textSize="24dp" />
+            <TextView
+                android:id="@+id/nm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pi"
+                android:paddingLeft="10dp"
+                android:text="Name"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nm"
+                android:paddingLeft="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="Khwanchai"
+                android:textColor="#000000"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/gmail"
+                android:background="#eeeeee" />
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/department"
+                android:background="#eeeeee" />
+
+            <TextView
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/position"
+                android:background="#eeeeee" />
+
+            <TextView
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/name"
+                android:background="#eeeeee" />
+            <TextView
+                android:id="@+id/ea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line4"
+                android:paddingLeft="10dp"
+                android:text="Email address"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/line5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/code"
+                android:background="#eeeeee" />
+
+            <TextView
+                android:id="@+id/gmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ea"
+                android:paddingLeft="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="Aiillermiiz@gmail.com"
+                android:textColor="#000000"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/ei"
+                android:paddingLeft="10dp"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_business_center_black_24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line"
+                android:background="#dbedf3"
+                android:text="Employee infomation"
+                android:textColor="#283149"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/text_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ei"
+                android:paddingLeft="10dp"
+                android:text="Staff code"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_code"
+                android:paddingLeft="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="8834"
+                android:textColor="#000000"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/dep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line5"
+                android:paddingLeft="10dp"
+                android:text="Department"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/department"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dep"
+                android:paddingLeft="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="Fontend"
+                android:textColor="#000000"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/pos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:paddingLeft="10dp"
+                android:text="Position"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pos"
+                android:paddingLeft="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="Android Developer"
+                android:textColor="#000000"
+                android:textSize="22dp" />
+
         </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/rel_nc"
-            android:layout_below="@+id/rel_top"
-            android:elevation="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#ffffff"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/profile"
-            android:background="@drawable/signup_icon_bg"
-            android:drawableLeft="@drawable/signup_icon"
-            android:layout_width="90dp"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:layout_height="90dp"/>
-        <TextView
-            android:text="Khwanchai"
-            android:textSize="25dp"
-            android:textColor="#000000"
-            android:id="@+id/name"
-            android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
-            android:layout_margin="10dp"
-            android:layout_toEndOf="@+id/profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="staff code/"
-            android:id="@+id/text_code"
-            android:layout_below="@+id/name"
-            android:textSize="20dp"
-            android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/ic_code_black_24dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="8834"
-            android:id="@+id/code"
-            android:layout_below="@+id/name"
-            android:textSize="20dp"
-            android:layout_toEndOf="@+id/text_code"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        </RelativeLayout>
-        <TextView
-            android:layout_below="@+id/rel_nc"
-            android:id="@+id/gmail"
-            android:elevation="5dp"
-            android:background="@drawable/card_input"
-            android:textColor="#666D77"
-            android:textSize="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"
-            android:text="Aiillermiiz@gmail.com"
-            android:drawablePadding="10dp"
-            android:padding="10dp"
-            android:drawableRight="@drawable/ic_email_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_below="@+id/gmail"
-            android:id="@+id/department"
-            android:elevation="5dp"
-            android:background="@drawable/card_input"
-            android:textColor="#666D77"
-            android:textSize="25dp"
-            android:layout_alignParentLeft="true"
-            android:layout_margin="10dp"
-            android:text="Fontend"
-            android:drawablePadding="10dp"
-            android:padding="10dp"
-            android:drawableLeft="@drawable/ic_account_balance_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_below="@+id/department"
-            android:id="@+id/position"
-            android:elevation="5dp"
-            android:background="@drawable/card_input"
-            android:textColor="#666D77"
-            android:textSize="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"
-            android:text="Android Developer"
-            android:drawablePadding="10dp"
-            android:padding="10dp"
-            android:drawableRight="@drawable/ic_location_searching_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <RelativeLayout
-        android:id="@+id/rel_btn"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:drawableLeft="@drawable/add_back"
-            android:id="@+id/profile_btn_back"
-            android:layout_width="58dp"
-            android:padding="3dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/signup_btn_back"
-            android:layout_height="58dp"/>
-    </RelativeLayout>
-    </RelativeLayout>
-</FrameLayout>
+    </FrameLayout>
 </layout>

@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 
 import com.example.promtnow_rot.R
 import com.example.promtnow_rot.databinding.FragmentRejectBinding
+import com.example.promtnow_rot.pending.FragmentListPending
 
 /**
  * A simple [Fragment] subclass.
@@ -22,6 +23,16 @@ class FragmentReject : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_reject, container, false)
         return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.rejectedBtnBack.setOnClickListener {
+            fragmentManager?.beginTransaction()?.apply {
+                replace(R.id.layoutFragmentReject, FragmentListReject())
+                addToBackStack("reject")
+                commit()
+            }
+        }
     }
 
 }

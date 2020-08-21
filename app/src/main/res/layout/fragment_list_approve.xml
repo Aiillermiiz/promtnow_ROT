@@ -9,15 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout
-            android:background="#111f4d"
+            android:background="#ffffff"
             android:id="@+id/rel_top"
-            android:paddingTop="15dp"
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/text_top"
-                android:text="Reimbursement of Traveling"
-                android:textColor="#FFFFFF"
+                android:text="Approved request"
+                android:textColor="#283149"
                 android:textStyle="bold"
                 android:textSize="28dp"
                 android:layout_centerHorizontal="true"
@@ -27,14 +27,20 @@
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
         <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/btn_back_top"
+            android:padding="4dp" />
+        <TextView
             android:id="@+id/rel_pro_set"
             android:layout_below="@+id/rel_top"
-            android:background="#111f4d"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="30dp"/>
 
         <LinearLayout
-            android:background="#FAFAFA"
+            android:background="#ffffff"
             android:orientation="horizontal"
             android:weightSum="2"
             android:paddingTop="5dp"
@@ -54,7 +60,7 @@
                     android:drawablePadding="5dp"
                     android:layout_height="wrap_content"
                     android:text="Khwanchai"
-                    android:textColor="#000000"
+                    android:textColor="#283149"
                     android:textSize="18dp" />
                 <RelativeLayout
                     android:layout_below="@+id/name"
@@ -67,8 +73,8 @@
                         android:layout_width="wrap_content"
                         android:drawablePadding="5dp"
                         android:layout_height="wrap_content"
-                        android:text="Code/"
-                        android:textColor="#000000"
+                        android:text="Staff code/"
+                        android:textColor="#283149"
                         android:textSize="18dp" />
                     <TextView
                         android:layout_toEndOf="@+id/text_code"
@@ -76,7 +82,7 @@
                         android:drawablePadding="5dp"
                         android:layout_height="wrap_content"
                         android:text="8834"
-                        android:textColor="#8598FF"
+                        android:textColor="#3F51B5"
                         android:textSize="18dp" />
                 </RelativeLayout>
 
@@ -92,8 +98,7 @@
                     android:drawablePadding="5dp"
                     android:text="Request date"
                     android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
+                    android:textColor="#283149"
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -102,13 +107,16 @@
                     android:layout_below="@+id/text_req"
                     android:textSize="17dp"
                     android:hint="mm/dd/yy"
+                    android:layout_marginRight="11dp"
+                    android:textColor="#283149"
+                    android:textColorHint="#283149"
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </RelativeLayout>
         </LinearLayout>
         <TextView
-            android:background="@drawable/card_btn_add"
+            android:background="@drawable/card_icon_circle"
             android:id="@+id/icon_check"
             android:drawableTop="@drawable/main_icon_approve"
             android:layout_width="wrap_content"
@@ -118,6 +126,7 @@
         <RelativeLayout
             android:layout_marginLeft="10dp"
             android:id="@+id/rel_pos"
+            android:background="#ffffff"
             android:paddingBottom="10dp"
             android:layout_below="@+id/rel_rd"
             android:layout_width="match_parent"
@@ -126,6 +135,7 @@
                 android:id="@+id/department"
                 android:drawableLeft="@drawable/ic_location_searching_black_24dp"
                 android:text="developer"
+                android:textColor="#283149"
                 android:drawablePadding="5dp"
                 android:textSize="18dp"
                 android:layout_width="wrap_content"
@@ -142,6 +152,7 @@
                 android:layout_toEndOf="@+id/con"
                 android:text="android developer"
                 android:textSize="18dp"
+                android:textColor="#283149"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
@@ -168,7 +179,7 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/rel_num"
-            android:background="#DFF5FF"
+            android:background="#dbedf3"
             android:padding="6dp"
             android:layout_above="@+id/text_price"
             android:layout_width="match_parent"
@@ -191,10 +202,10 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/text_price"
-            android:background="#F8F8F8"
+            android:background="#404b69"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:layout_above="@+id/rel_btn"
+            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="60dp">
             <TextView
@@ -205,36 +216,20 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="sans-serif"
                 android:text="Total"
-                android:textColor="#404040"
+                android:textColor="#ffffff"
                 android:textSize="30dp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/add_price_show"
                 android:textSize="29dp"
                 android:text="1500.00"
-                android:textColor="#8BC34A"
+                android:textColor="#B2FA5E"
                 android:layout_toEndOf="@+id/text_total"
                 android:gravity="right"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/rel_btn"
-            android:background="#111f4d"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="65dp">
-            <Button
-                android:id="@+id/approved_list_btn_back"
-                android:drawableRight="@drawable/add_back"
-                android:background="@drawable/signup_btn_back"
-                android:padding="5dp"
-                android:layout_margin="4dp"
-                android:layout_alignParentBottom="true"
-                android:layout_width="58dp"
-                android:layout_height="58dp"/>
         </RelativeLayout>
     </RelativeLayout>
 
