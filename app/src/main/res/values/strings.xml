@@ -3,7 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="sing_up_here"><u>Sign up here</u></string>
+    <string name="sing_up_here"><u>สร้างบัญชีผู้ใช้</u></string>
     <string-array name="department">
         <item>Accounting</item>
         <item>font-end</item>
@@ -15,6 +15,26 @@
         <item>ไป</item>
         <item>กลับ</item>
         <item>ต่อที่อื่น</item>
+    </string-array>
+    <string-array name="year">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+    </string-array>
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>Jule</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
     </string-array>
     <string-array name="by">
         <item>TAXI</item>

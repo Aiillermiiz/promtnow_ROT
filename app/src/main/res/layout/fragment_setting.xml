@@ -12,25 +12,28 @@
             android:id="@+id/setting_text_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rel_top"
-            android:layout_centerHorizontal="true"
+            android:background="#FFFFFF"
+            android:textStyle="bold"
             android:gravity="center"
-            android:padding="10dp"
-            android:text="Setting"
-            android:textColor="#283149"
-            android:textSize="28dp"
-            android:textStyle="bold" />
+            android:padding="5dp"
+            android:text="ตั้งค่า"
+            android:textColor="#393939"
+            android:textSize="20dp"/>
 
+        <TextView
+            android:layout_below="@+id/setting_text_setting"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
         <TextView
             android:id="@+id/setting_btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/btn_back_top"
-            android:padding="4dp" />
+            android:drawableLeft="@drawable/btn_back_color" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/setting_text_setting">
 
             <RelativeLayout
@@ -40,67 +43,52 @@
                 android:layout_centerHorizontal="true">
 
                 <TextView
-                    android:id="@+id/setting_text_editpro"
+                    android:id="@+id/setting_text_profile"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:drawableLeft="@drawable/setting_icon_editpro"
-                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableStart="@drawable/setting_icon_editpro"
+                    android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                     android:drawablePadding="10dp"
                     android:padding="10dp"
-                    android:text="Edit Profile"
-                    android:textColor="#454545"
+                    android:text="โปรไฟล์"
+                    android:textColor="#393939"
                     android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/setting_text_editpro"
-                    android:background="#E3E3E3" />
-
                 <TextView
                     android:id="@+id/setting_text_changepass"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_below="@+id/setting_text_editpro"
-                    android:layout_marginTop="5dp"
-                    android:drawableLeft="@drawable/setting_icon_changepass"
-                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:layout_below="@+id/setting_text_profile"
+                    android:drawableStart="@drawable/setting_icon_changepass"
+                    android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                     android:drawablePadding="10dp"
                     android:padding="10dp"
-                    android:text="Change Password"
-                    android:textColor="#454545"
+                    android:text="เปลี่ยนรหัสผ่าน"
+                    android:textColor="#393939"
                     android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/setting_text_changepass"
-                    android:background="#E3E3E3" />
-
                 <RelativeLayout
                     android:id="@+id/setting_text_logout"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_below="@+id/setting_text_changepass"
-                    android:background="#F3F3F3"
+                    android:background="#F4F4F4"
                     android:padding="10dp">
 
                     <TextView
                         android:id="@+id/setting_icon_logout"
-                        android:layout_width="34dp"
-                        android:layout_height="34dp"
-                        android:layout_alignParentLeft="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="2dp"
+                        android:layout_marginStart="5dp"
                         android:background="@drawable/logout" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@+id/setting_icon_logout"
-                        android:paddingLeft="11dp"
-                        android:text="Logout"
-                        android:textColor="#454545"
+                        android:paddingStart="10dp"
+                        android:text="ออกจากระบบ"
+                        android:textStyle=""
+                        android:textColor="#393939"
                         android:textSize="20dp" />
                 </RelativeLayout>
             </RelativeLayout>

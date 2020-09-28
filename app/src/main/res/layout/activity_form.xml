@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#edf1f4"
+            tools:ignore="UselessParent">
+
+            <RelativeLayout
+                android:id="@+id/rel_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff">
+
+                <TextView
+                    android:id="@+id/text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="รายการคำร้อง"
+                    android:textColor="#393939"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rel_top"
+                android:background="#eeeeee" />
+
+            <TextView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/btn_back_color"
+                android:padding="0dp" />
+
+            <TextView
+                android:id="@+id/form_add_btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/btn_check_color"
+                android:padding="2dp" />
+
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rel_top"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/rel_make"
+                    android:background="#fff"
+                    android:layout_above="@+id/rel_date"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/btn_date"
+                    android:padding="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/card_icon_circle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:padding="7dp"
+                        android:drawableTop="@drawable/icon_date"
+                        android:background="@drawable/card_btn_delete"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_date"
+                    android:layout_below="@+id/btn_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#fff">
+
+                    <RelativeLayout
+                        android:id="@+id/rel_0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:paddingBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/text_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="วันที่ไป"
+                                android:textColor="#424242"
+                                android:textSize="19dp" />
+
+                            <TextView
+                                android:id="@+id/form_add_input_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="dd-mm-yy"
+                                android:textColor="#8F8F8F"
+                                android:textSize="19dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_date"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/card_bill_form"
+                    android:elevation="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/rel_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_pro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="เลขที่โปรเจค"
+                                android:textColor="#424242"
+                                android:textSize="15dp" />
+
+                            <EditText
+                                android:id="@+id/form_add_input_project_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:inputType="text"
+                                android:padding="3dp"
+                                android:paddingStart="10dp"
+                                android:textColor="#717171"
+                                android:textSize="20dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_res"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="หัวข้อเรื่อง"
+                                android:textColor="#424242"
+                                android:textSize="15dp" />
+
+                            <EditText
+                                android:id="@+id/form_add_input_reson"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:inputType="text"
+                                android:maxLength="31"
+                                android:padding="3dp"
+                                android:paddingStart="10dp"
+                                android:textColor="#717171"
+                                android:textSize="20dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rel_res"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_1"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rel_ft"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_res"
+                        android:layout_marginTop="5dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/rel_f"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_from"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="เดินทางจาก"
+                                android:textColor="#424242"
+                                android:textSize="15dp" />
+
+                            <EditText
+                                android:id="@+id/form_add_input_from"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:inputType="text"
+                                android:padding="3dp"
+                                android:paddingStart="10dp"
+                                android:textColor="#717171"
+                                android:textSize="20dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text_to"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ไปยัง"
+                                android:textColor="#424242"
+                                android:textSize="15dp" />
+
+                            <EditText
+                                android:id="@+id/form_add_input_to"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:inputType="text"
+                                android:padding="3dp"
+                                android:paddingStart="10dp"
+                                android:textColor="#717171"
+                                android:textSize="20dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rel_by_af"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_ft"
+                        android:layout_marginTop="10dp"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/rel_by"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_by"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="เดินทางโดย"
+                                android:textColor="#424242"
+                                android:textSize="15dp" />
+
+                            <Spinner
+                                android:id="@+id/spinner_vehicle"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_below="@+id/txt_by" />
+
+                            <TextView
+                                android:id="@+id/txt_select_by"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:layout_below="@+id/txt_by"
+                                android:background="#ffffff"
+                                android:gravity="center"
+                                android:text="เลือก"
+                                android:textSize="19dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/spinner_vehicle"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="#9E9E9E" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ประเภทการเดินทาง"
+                                android:textColor="#424242"
+                                android:textSize="15dp" />
+
+                            <Spinner
+                                android:id="@+id/spinner_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_below="@+id/txt_type" />
+
+                            <TextView
+                                android:id="@+id/txt_select_type"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:layout_below="@+id/txt_type"
+                                android:background="#ffffff"
+                                android:gravity="center"
+                                android:text="เลือก"
+                                android:textSize="19dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/spinner_type"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="#9E9E9E" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rel_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_by_af"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/attach_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_upload_img"
+                            android:text="อัพโหลดรูปภาพ"
+                            android:textColor="#FFFFFF"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:padding="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:adjustViewBounds="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rel_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_type"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="รายละเอียด"
+                            android:textColor="#424242"
+                            android:textSize="15dp" />
+
+                        <EditText
+                            android:id="@+id/form_add_input_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:inputType="text"
+                            android:padding="3dp"
+                            android:paddingStart="10dp"
+                            android:textColor="#717171"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/rel_des"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/card_money_gold"
+                        android:gravity="center"
+                        android:text="฿"
+                        android:textColor="#fff"
+                        android:textSize="27dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_amo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_des"
+                        android:layout_marginTop="50dp"
+                        android:drawableStart="@drawable/ic_payment_form"
+                        android:drawablePadding="5dp"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="7dp"
+                        android:text="จำนวนเงิน"
+                        android:textColor="#424242"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/form_input_add_amount"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_des"
+                        android:layout_toStartOf="@+id/unit"
+                        android:layout_toEndOf="@+id/text_amount"
+                        android:gravity="right"
+                        android:hint="0"
+                        android:layout_marginTop="50dp"
+                        android:inputType="number"
+                        android:paddingTop="7dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="7dp"
+                        android:textColor="#2E2E2E"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_des"
+                        android:layout_alignParentEnd="true"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="7dp"
+                        android:text="฿"
+                        android:layout_marginTop="50dp"
+                        android:textColor="#424242"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

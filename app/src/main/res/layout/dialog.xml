@@ -1,0 +1,42 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/btn_no"
+            android:gravity="center"
+            android:text="ยกเลิก"
+            android:textSize="20dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:drawablePadding="5dp"
+            android:textColor="#393939"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/btn_yes"
+            android:gravity="center"
+            android:text="ยืนยัน"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:drawablePadding="5dp"
+            android:textColor="#2196F3"
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

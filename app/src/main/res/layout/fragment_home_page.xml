@@ -1,167 +1,510 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<FrameLayout
-    android:layout_width="match_parent"
-    android:background="#eeeeee"
-    android:layout_height="match_parent"
-    tools:context=".homepage.FragmentHomePage">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".homepage.FragmentHomePage">
+
         <RelativeLayout
-            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#edf1f4"
             tools:context=".MainPageActivity">
             <RelativeLayout
-                android:id="@+id/rel_top"
-                android:padding="10dp"
-                android:background="@drawable/card_main_top"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/text_rot"
-                    android:gravity="center"
-                    android:textColor="#ffffff"
-                    android:textSize="28dp"
-                    android:textStyle="bold"
-                    android:text="Main Page"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/rel_menu"
-                android:layout_below="@+id/rel_top"
-                android:background="#ffffff"
-                android:paddingTop="10dp"
-                android:elevation="10dp"
-                android:paddingBottom="40dp"
-                android:layout_width="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/text_wel"
-                    android:gravity="center"
-                    android:textSize="17dp"
-                    android:textColor="#404b69"
-                    android:text="Welcome to Reimbursement of Traveling"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/text_pls"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_below="@+id/text_wel"
-                    android:textSize="17dp"
-                    android:textStyle="bold"
-                    android:drawableBottom="@drawable/ic_arrow_downward_black_24dp"
-                    android:textColor="#404b69"
-                    android:text="Please select menu to do"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <GridLayout
-                    android:layout_below="@+id/text_pls"
-                    android:layout_marginTop="10dp"
-                    android:layout_centerHorizontal="true"
-                    android:rowCount="3"
-                    android:columnCount="3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <RelativeLayout
-                        android:id="@+id/main_pending"
-                        android:background="@drawable/main_card_menu"
-                        android:gravity="center"
-                        android:layout_margin="5dp"
-                        android:layout_width="110dp"
-                        android:layout_height="110dp">
-                        <TextView
-                            android:drawableTop="@drawable/main_icon_pending"
-                            android:text="Pending"
-                            android:textSize="19dp"
-                            android:textColor="#202020"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/main_approve"
-                        android:background="@drawable/main_card_menu"
-                        android:gravity="center"
-                        android:layout_margin="5dp"
-                        android:layout_width="110dp"
-                        android:layout_height="110dp">
-                        <TextView
-                            android:drawableTop="@drawable/main_icon_approve"
-                            android:text="Approved"
-                            android:textSize="19dp"
-                            android:textColor="#202020"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:id="@+id/main_reject"
-                        android:background="@drawable/main_card_menu"
-                        android:gravity="center"
-                        android:layout_margin="5dp"
-                        android:layout_width="110dp"
-                        android:layout_height="110dp">
-                        <TextView
-                            android:drawableTop="@drawable/ic_cancel_black_24dp"
-                            android:text="Rejected"
-                            android:textSize="19dp"
-                            android:textColor="#202020"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    </RelativeLayout>
-                </GridLayout>
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/rel_pro_set"
-                android:background="@drawable/card_main_top"
                 android:layout_alignParentBottom="true"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp"
+                android:background="#fff"
                 android:layout_width="match_parent"
-                android:layout_height="65dp">
-                <Button
-                    android:id="@+id/main_profile"
-                    android:textSize="15dp"
-                    android:background="#00222831"
-                    android:text="profile"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="10dp"
-                    android:drawablePadding="5dp"
-                    android:textColor="#ffffff"
-                    android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+                android:layout_height="20dp">
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rel_cl"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="5dp"
+                    android:drawableStart="@drawable/ic_home_black_24dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
-                <Button
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="#393939"
+                    android:text="หน้าหลัก"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
                     android:id="@+id/main_setting"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="#ffffff"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="10dp"
-                    android:background="#00222831"
-                    android:text="setting"
-                    android:drawablePadding="5dp"
-                    android:drawableLeft="@drawable/main_icon_setting"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:drawableStart="@drawable/main_icon_setting"
+                    android:padding="4dp" />
             </RelativeLayout>
+
             <TextView
-                android:background="@drawable/card_btn_add"
-                android:id="@+id/main_add"
-                android:layout_marginBottom="5dp"
-                android:drawableTop="@drawable/ic_add_circle_black_24dp"
-                android:layout_width="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/rel_cl"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <RelativeLayout
+                android:id="@+id/pie_card"
+                android:elevation="5dp"
+                android:background="@drawable/card_show_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel_req"
                 android:layout_centerHorizontal="true"
-                android:layout_height="100dp"/>
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/bg_pie"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+
+                    <TextView
+                        android:id="@+id/text_pie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/pie_id"
+                        android:padding="5dp"
+                        android:text="สถานะเอกสารคำร้อง"
+                        android:textColor="#000"
+                        android:textSize="19dp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pie"
+                        android:layout_toEndOf="@+id/line">
+
+                        <TextView
+                            android:id="@+id/text_pending"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="10dp"
+                            android:text="รอดำเนินการ"
+                            android:textColor="#393939"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/text_approve"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_pending"
+                            android:layout_marginTop="10dp"
+                            android:drawablePadding="10dp"
+                            android:text="อนุมัติเเล้ว"
+                            android:textColor="#393939"
+                            android:textSize="15dp" />
+
+
+                        <TextView
+                            android:id="@+id/text_reject"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_approve"
+                            android:layout_marginTop="10dp"
+                            android:drawablePadding="10dp"
+                            android:text="ถูกปฏิเสธ"
+                            android:textColor="#393939"
+                            android:textSize="15dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/line"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/text_pie"
+                        android:layout_marginBottom="25dp"
+                        android:layout_toEndOf="@+id/pie_id">
+
+                        <TextView
+                            android:layout_width="1dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#eee" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pie"
+                        android:layout_toEndOf="@+id/pie_id">
+
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:background="#006fe3" />
+
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="38dp"
+                            android:background="#5DE8B0" />
+
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="70dp"
+                            android:background="#744CBC" />
+                    </RelativeLayout>
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pie_id"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card_request"
+                android:elevation="5dp"
+                android:background="@drawable/card_show_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pie_card"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:visibility="invisible">
+
+                <RelativeLayout
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/icon_request" />
+
+                    <TextView
+                        android:id="@+id/text_req"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/icon"
+                        android:text="ใบเบิกค่าพาหนะ"
+                        android:textColor="#000"
+                        android:textSize="21dp" />
+
+                    <TextView
+                        android:id="@+id/maint_edit_request"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:drawableStart="@drawable/ic_chevron_right_black_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_req"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/icon">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="คำร้องประจำเดือน"
+                            android:textColor="#393939"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:padding="2dp"
+                            android:text="january"
+                            android:textColor="#393939"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/rel_req"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rel_cl"
+                android:weightSum="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:elevation="5dp"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_show_data"
+                    android:layout_weight="1"
+                    android:padding="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="115dp">
+                    <TextView
+                        android:text="รอดำเนินการ"
+                        android:textColor="#000"
+                        android:textSize="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="5"
+                            android:inputType="text"
+                            android:textStyle="bold"
+                            android:textColor="#006fe3"
+                            android:textSize="47dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_marginStart="5dp"
+                            android:text="เรื่อง"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:elevation="5dp"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_show_data"
+                    android:layout_weight="1"
+                    android:padding="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="115dp">
+                    <TextView
+                        android:text="อนุมัติเเล้ว"
+                        android:textColor="#000"
+                        android:textSize="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="2"
+                            android:inputType="text"
+                            android:textStyle="bold"
+                            android:textColor="#5DE8B0"
+                            android:textSize="47dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_marginStart="5dp"
+                            android:text="เรื่อง"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:elevation="5dp"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_show_data"
+                    android:layout_weight="1"
+                    android:padding="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="115dp">
+                    <TextView
+                        android:text="ถูกปฏิเสธ"
+                        android:textSize="13dp"
+                        android:textColor="#000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="3"
+                            android:inputType="text"
+                            android:textStyle="bold"
+                            android:textColor="#744CBC"
+                            android:textSize="47dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_marginStart="5dp"
+                            android:text="เรื่อง"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/card_bar"
+                android:weightSum="5">
+
+                <RelativeLayout
+                    android:id="@+id/main_pending"
+                    android:layout_width="0dp"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="7dp">
+                    <TextView
+                        android:id="@+id/icon_pen"
+                        android:layout_width="30dp"
+                        android:layout_height="33dp"
+                        android:background="@drawable/icon_pending"
+                        android:padding="3dp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_approve"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="33dp"
+                        android:background="@drawable/icon_approve"
+                        android:padding="3dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_reject"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="33dp"
+                        android:background="@drawable/icon_reject"
+                        android:padding="3dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_money"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/icon_money"
+                        android:padding="3dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:weightSum="5">
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:id="@+id/alert_pen"
+                        android:text="2"
+                        android:visibility="invisible"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:background="@drawable/card_btn_delete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:id="@+id/alert_app"
+                        android:text="2"
+                        android:visibility="invisible"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:background="@drawable/card_btn_delete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:id="@+id/alert_rej"
+                        android:text="2"
+                        android:visibility="invisible"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:background="@drawable/card_btn_delete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/main_add"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/card_icon_circle">
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/btn_add_list"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="#fff"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
         </RelativeLayout>
 
-</FrameLayout>
+    </FrameLayout>
 </layout>

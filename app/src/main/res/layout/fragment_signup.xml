@@ -1,205 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".register.FragmentSignup">
 
-<RelativeLayout
-    android:background="#ffffff"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/reg_btn_back_login"
-        android:padding="4dp"
-        android:drawableLeft="@drawable/btn_back_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/reg_btn_signup"
-        android:padding="4dp"
-        android:layout_alignParentRight="true"
-        android:drawableLeft="@drawable/btn_next_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/text"
-            android:padding="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="@font/amiko_bold"
-            android:text="Sign up"
-            android:textStyle="italic"
-            android:rotation="0"
-            android:textColor="#283149"
-            android:textSize="40dp" />
-
         <RelativeLayout
-            android:id="@+id/rel_input"
-            android:layout_below="@+id/text"
-            android:paddingTop="20dp"
-            android:paddingRight="30dp"
-            android:paddingLeft="30dp"
-            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+        <RelativeLayout
+            android:id="@+id/rel_top"
+            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/text_pi"
-                android:gravity=""
-                android:textSize="24dp"
-                android:paddingBottom="5dp"
-                android:textColor="#404b69"
-                android:text="Private Information"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <RelativeLayout
-            android:id="@+id/rel_form"
-            android:layout_below="@+id/text_pi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/reg_input_gmail"
-                android:hint="e-mail address..."
-                android:backgroundTint="#404b69"
-                android:padding="10dp"
-                android:layout_alignParentTop="true"
-                android:textColorHint="#C7CDDF"
-                android:textColor="#283149"
-                android:textSize="23dp"
-                android:inputType="textEmailAddress"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_email_black_24dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/reg_input_password"
-                android:hint="password..."
-                android:textSize="23dp"
-                android:layout_marginTop="15dp"
-                android:padding="10dp"
-                android:backgroundTint="#404b69"
-                android:inputType="textPassword"
-                android:textColor="#283149"
-                android:textColorHint="#C7CDDF"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
-                android:layout_below="@+id/reg_input_gmail"
-                android:paddingRight="10dp"
-                android:layout_width="match_parent"
-                android:layout_toEndOf="@+id/lay_1"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/eyes"
-                android:textSize="20dp"
-                android:layout_marginTop="15dp"
-                android:padding="10dp"
-                android:layout_alignParentRight="true"
-                android:drawableRight="@drawable/ic_remove_red_eye_black_24dp"
-                android:layout_marginLeft="10dp"
-                android:layout_below="@+id/reg_input_gmail"
-                android:paddingRight="10dp"
+                android:id="@+id/reg_btn_back_login"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/reg_input_name"
-                android:hint="name..."
-                android:textColorHint="#C7CDDF"
-                android:textSize="23dp"
-                android:padding="10dp"
-                android:backgroundTint="#404b69"
-                android:inputType="text"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
-                android:paddingRight="10dp"
-                android:textColor="#283149"
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_below="@+id/reg_input_password"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/text_ei"
-                android:layout_below="@+id/reg_input_name"
-                android:textSize="24dp"
-                android:paddingTop="25dp"
-                android:paddingBottom="5dp"
-                android:textColor="#404b69"
-                android:text="Employee Information"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/reg_input_staff_code"
-                android:hint="staff code..."
-                android:textColor="#283149"
-                android:textColorHint="#C7CDDF"
-                android:textSize="23dp"
-                android:inputType="number"
-                android:padding="10dp"
-                android:backgroundTint="#404b69"
-                android:drawableLeft="@drawable/ic_code_black_24dp"
-                android:paddingRight="10dp"
-                android:drawablePadding="10dp"
-                android:layout_width="match_parent"
-                android:layout_below="@+id/text_ei"
-                android:layout_height="wrap_content"/>
-            <RelativeLayout
-                android:id="@+id/rel_dep"
-                android:paddingLeft="5dp"
-                android:padding="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_below="@+id/reg_input_staff_code"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/draw_dep"
-                    android:layout_marginLeft="5dp"
-                    android:layout_centerVertical="true"
-                    android:drawableLeft="@drawable/ic_account_balance_black_24dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <Spinner
-                    android:id="@+id/spinner_dep"
-                    android:entries="@array/department"
-                    android:layout_toEndOf="@+id/draw_dep"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp" />
-                <TextView
-                    android:layout_below="@+id/spinner_dep"
-                    android:background="#404b69"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:paddingLeft="5dp"
-                android:id="@+id/rel_pos"
-                android:padding="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_below="@+id/rel_dep"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/draw_pos"
-                    android:layout_marginLeft="5dp"
-                    android:layout_centerVertical="true"
-                    android:drawableLeft="@drawable/ic_location_searching_black_24dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <Spinner
-                    android:id="@+id/spinner_pos"
-                    android:layout_toEndOf="@+id/draw_pos"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:entries="@array/position" />
-                <TextView
-                    android:layout_below="@+id/spinner_pos"
-                    android:background="#404b69"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"/>
-            </RelativeLayout>
-        </RelativeLayout>
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/btn_back_color" />
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/reg_btn_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/btn_next_top"/>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:text="สร้างบัญชี"
+                android:textColor="#393939"
+                android:textSize="20dp" />
+        </RelativeLayout>
+            <TextView
+                android:layout_below="@+id/rel_top"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel_top"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/rel_form"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="ที่อยู่อีเมล"
+                        android:textColor="#5A5A5A"
+                        android:textSize="17dp" />
+
+                    <EditText
+                        android:id="@+id/reg_input_gmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/text_email"
+                        android:paddingStart="20dp"
+                        android:hint="hello@gmail.com"
+                        android:inputType="textEmailAddress"
+                        android:padding="10dp"
+                        android:textColor="#000"
+                        android:textColorHint="#BABABA"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/text_pass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/reg_input_gmail"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="รหัสผ่าน"
+                        android:textColor="#5A5A5A"
+                        android:textSize="17dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/text_pass"
+                        android:layout_below="@+id/reg_input_gmail"
+                        android:padding="7dp"
+                        android:text="*ไม่เกิน 10 ตัวอักษร"
+                        android:textColor="#AFAFAF"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/reg_input_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:maxLength="10"
+                        android:layout_below="@+id/text_pass"
+                        android:paddingStart="20dp"
+                        android:hint="*******"
+                        android:inputType="textPassword"
+                        android:padding="10dp"
+                        android:paddingRight="10dp"
+                        android:textColor="#000"
+                        android:textColorHint="#BABABA"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/eyes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pass"
+                        android:layout_alignParentEnd="true"
+                        android:drawableRight="@drawable/ic_remove_red_eye_black_24dp"
+                        android:padding="10dp"
+                        android:paddingEnd="20dp"
+                        android:textSize="20dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/linear"
+                        android:weightSum="2"
+                        android:layout_below="@+id/reg_input_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:paddingEnd="5dp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/text_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="ชื่อผู้ใช้"
+                                android:textColor="#5A5A5A"
+                                android:textSize="17dp" />
+                            <EditText
+                                android:id="@+id/reg_input_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_below="@+id/text_name"
+                                android:paddingStart="20dp"
+                                android:hint="Hello"
+                                android:inputType="text"
+                                android:padding="10dp"
+                                android:paddingRight="10dp"
+                                android:textColor="#000"
+                                android:textColorHint="#BABABA"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:paddingStart="5dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/text_lname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="นามสกุล"
+                                android:textColor="#5A5A5A"
+                                android:textSize="17dp" />
+                            <EditText
+                                android:id="@+id/reg_input_lname"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_below="@+id/text_lname"
+                                android:hint="world"
+                                android:inputType="text"
+                                android:padding="10dp"
+                                android:paddingStart="20dp"
+                                android:textColor="#000"
+                                android:textColorHint="#BABABA"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/text_ei"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linear"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="รหัสพนักงาน"
+                        android:textColor="#5A5A5A"
+                        android:textSize="17dp" />
+
+                    <EditText
+                        android:id="@+id/reg_input_staff_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/text_ei"
+                        android:paddingStart="20dp"
+                        android:hint="8***"
+                        android:maxLength="4"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="#000"
+                        android:textColorHint="#BABABA"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/text_dep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/reg_input_staff_code"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="แผนก"
+                        android:textColor="#5A5A5A"
+                        android:textSize="17dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rel_dep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_dep">
+
+                        <Spinner
+                            android:id="@+id/spinner_dep"
+                            android:paddingStart="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"/>
+                        <TextView
+                            android:id="@+id/txt_dep"
+                            android:text="เลือกแผนก"
+                            android:gravity="center_vertical"
+                            android:textSize="18dp"
+                            android:padding="5dp"
+                            android:textColor="#5A5A5A"
+                            android:background="#ffffff"
+                            android:layout_marginStart="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_below="@+id/spinner_dep"
+                            android:background="#505050"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/text_pos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel_dep"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="ตำแหน่ง"
+                        android:textColor="#5A5A5A"
+                        android:textSize="17dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rel_pos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pos">
+
+                        <Spinner
+                            android:paddingStart="20dp"
+                            android:id="@+id/spinner_pos"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"/>
+                        <TextView
+                            android:id="@+id/txt_pos"
+                            android:text="เลือกตำแหน่ง"
+                            android:textSize="18dp"
+                            android:textColor="#5A5A5A"
+                            android:background="#ffffff"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="19dp"
+                            android:layout_marginEnd="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="26dp"/>
+                        <TextView
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_below="@+id/spinner_pos"
+                            android:background="#505050"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:buttonTint="#00B6E3"
+                    android:layout_below="@+id/rel_form"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/text_ag"
+                    android:layout_marginTop="20dp"
+                    android:text="เห็นด้วยกับ"
+                    android:padding="5dp"
+                    android:textSize="17dp"
+                    android:textColor="#5A5A5A"
+                    android:layout_toEndOf="@+id/checkbox"
+                    android:layout_below="@+id/rel_form"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:text="ข้อกำหนดและเงื่อนไข"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="17dp"
+                    android:textColor="#00B6E3"
+                    android:layout_toEndOf="@+id/text_ag"
+                    android:layout_below="@+id/rel_form"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
     </FrameLayout>
 </layout>

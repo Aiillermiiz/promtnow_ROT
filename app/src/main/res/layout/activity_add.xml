@@ -1,15 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:id="@+id/root_add"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".register.RegisterActivity">
-        <FrameLayout
-            android:id="@+id/layoutFragmentContainerAdd"
+        tools:context=".add.FragmentAdd">
+        <RelativeLayout
+            android:background="#edf1f4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/rel_top"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text_top"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:textColor="#393939"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="ใบเบิกค่าพาหนะ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/btn_back_color" />
+
+                <TextView
+                    android:id="@+id/add_btn_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/btn_check_color"
+                    android:padding="2dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_list"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/rel_top"
+                android:layout_above="@+id/text_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/add_recycle_main"
+                    android:paddingTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/list_item_list_detail" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/add_btn_add"
+                android:layout_width="65dp"
+                android:background="@drawable/btn_add_list"
+                android:gravity="center"
+                android:textSize="45dp"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:text="+"
+                android:layout_alignParentRight="true"
+                android:layout_above="@+id/text_price"
+                android:layout_height="65dp"/>
+
+            <TextView
+                android:layout_above="@+id/text_price"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <RelativeLayout
+                android:id="@+id/text_price"
+                android:background="#ffffff"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+                <TextView
+                    android:id="@+id/text_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="ยอดรวม"
+                    android:textStyle="bold"
+                    android:textColor="#393939"
+                    android:textSize="22dp"/>
+                <TextView
+                    android:id="@+id/add_total_amount"
+                    android:textSize="22dp"
+                    android:text="00.00"
+                    android:textColor="#673AB7"
+                    android:layout_toEndOf="@+id/text_total"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </FrameLayout>
 </layout>

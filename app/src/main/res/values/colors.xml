@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimary">#303030</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorRegBtnSignDis">#7E89C5</color>
     <color name="colorRegBtnSignEna">#3F51B5</color>
     <color name="colorwhite">#FFFFFF</color>
-    <color name="log1">#8DAABABF</color>
-    <color name="log2">#283149</color>
+    <color name="log1">#4A4A4A</color>
+    <color name="log2">#3360D1</color>
+    <color name="txt">#5A5A5A</color>
+    <color name="blue">#00BCD4</color>
+    <color name="red">#FD4739</color>
 </resources>

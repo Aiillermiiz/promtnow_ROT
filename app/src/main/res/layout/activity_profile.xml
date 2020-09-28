@@ -1,15 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".register.RegisterActivity">
-        <FrameLayout
-            android:id="@+id/layoutFragmentProfile"
+        tools:context=".profile.FragmentProfile">
+
+        <RelativeLayout
+            android:background="#fff"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/rel_top"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="#393939"
+                    android:text="โปรไฟล์"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/profile_btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/btn_back_color" />
+                <TextView
+                    android:padding="4dp"
+                    android:id="@+id/profile_btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_edit_black_24dp" />
+            </RelativeLayout>
+            <TextView
+                android:layout_below="@+id/rel_top"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_img"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rel_top">
+                <RelativeLayout
+                    android:background="@drawable/card_icon_circle"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/signup_icon_bg" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/name"
+                android:background="@drawable/card_input_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text_gmail"
+                        android:text="ที่อยู่อีเมล"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_email_black_24dp"
+                        android:padding="5dp"
+                        android:textColor="#757575"
+                        android:textSize="17dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/gmail"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="aiillermiiz@gmail.com"
+                        android:textSize="17dp"
+                        android:textColor="#404040"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <TextView
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text_stf_code"
+                        android:text="รหัสพนักงาน"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_code_black_24dp"
+                        android:padding="5dp"
+                        android:textColor="#757575"
+                        android:textSize="17dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/stf_code"
+                        android:padding="5dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#404040"
+                        android:text="8895"
+                        android:textSize="17dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <TextView
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text_dep"
+                        android:text="แผนก"
+                        android:textColor="#757575"
+                        android:padding="5dp"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/icon_dep"
+                        android:textSize="17dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/dep"
+                        android:padding="5dp"
+                        android:text="Font-end"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#404040"
+                        android:textSize="17dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <TextView
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text_pos"
+                        android:text="ตำแหน่ง"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_location_searching_black_24dp"
+                        android:textColor="#757575"
+                        android:padding="5dp"
+                        android:textSize="17dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/pos"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="Android developer"
+                        android:textColor="#404040"
+                        android:textSize="17dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/name"
+                android:layout_below="@+id/rel_img"
+                android:textSize="22dp"
+                android:textColor="#393939"
+                android:layout_centerHorizontal="true"
+                android:text="Khwanchai Nontawichit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+    </FrameLayout>
 </layout>

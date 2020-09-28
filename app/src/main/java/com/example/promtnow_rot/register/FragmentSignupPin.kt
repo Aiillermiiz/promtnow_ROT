@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
@@ -37,6 +38,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     var listener: PinListener? = null
     //data user
     var name = ""
+    var lname = ""
     var gmail = ""
     var password = ""
     var staff_code = ""
@@ -57,10 +59,11 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
 
     //------------------------------------------------------ RECEIVE & SET DATA TO BUNDLE ----------
     companion object{
-        fun newInstance(state: PinState,name:String,gmail:String,password:String,staff_code:String,position:String,department:String,pin:String): FragmentSignupPin{
+        fun newInstance(state: PinState,name:String,lname:String,gmail:String,password:String,staff_code:String,position:String,department:String,pin:String): FragmentSignupPin{
             val bundle = Bundle()
             bundle.putSerializable("STATE", state)
             bundle.putString("name",name)
+            bundle.putString("lname",lname)
             bundle.putString("gmail",gmail)
             bundle.putString("password",password)
             bundle.putString("staff_code",staff_code)
@@ -76,6 +79,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         pinState = arguments?.getSerializable("STATE") as PinState
         name = arguments?.getString("name") as String
+        lname = arguments?.getString("lname") as String
         gmail = arguments?.getString("gmail") as String
         password = arguments?.getString("password") as String
         staff_code = arguments?.getString("staff_code") as String
@@ -257,15 +261,15 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     fun setState(state : PinState){
         when(state){
             PinState.STATE_AUTHEN -> {
-                binding.tvTitle.text = "Enter PIN Code"
+                binding.tvTitle.text = "ระบุรหัส PIN"
             }
             PinState.STATE_CREATE -> {
                 clearFillPin()
                 confirmPin = ""
-                binding.tvTitle.text = "Create PIN Code"
+                binding.tvTitle.text = "สร้างรหัส PIN"
             }
             PinState.STATE_CONFIRM -> {
-                binding.tvTitle.text = "Confirm PIN Code"
+                binding.tvTitle.text = "ยืนยันรหัส PIN"
                  firstPin = pin
                 clearFillPin()
             }
@@ -273,7 +277,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     }
     //______________________________________________________________________________________________
     //------------------------------------------------------- CLEAR FIILL PIN AND SET EMPTY PIN ----
-    fun clearFillPin(){
+    private fun clearFillPin(){
         pin = ""
         indicators.forEachIndexed { index, view ->
                 view.setBackgroundResource(R.drawable.input_pin)
@@ -288,6 +292,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
         val account = hashMapOf(
             "department" to department,
             "name" to name,
+            "lname" to lname,
             "password" to password,
             "pin" to confirmPin,
             "position" to position,

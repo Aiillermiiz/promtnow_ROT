@@ -11,6 +11,7 @@ object InfoUser{
         return instance
     }
     var name = ""
+    var lname = ""
     var gmail = ""
     var password = ""
     var staff_code = ""

@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.promtnow_rot.setting
 
 import android.app.AlertDialog
@@ -5,10 +7,9 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 
@@ -17,6 +18,7 @@ import com.example.promtnow_rot.databinding.FragmentChangePasswordBinding
 import com.example.promtnow_rot.homepage.InfoUser
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.dialog.view.*
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -47,25 +49,31 @@ class FragmentChangePassword : Fragment() {
             val pass = binding.changepassInputCurrPassword.text.toString()
             when {//empty
                 checkEdittextEmpty() -> {
-                    Toast.makeText(context, "empty", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "กรุณากรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG).show()
                 }//validate
                 validatePassword(pass)-> {
                     Toast.makeText(context,"กรุณาตรวจสอบข้อมูล",Toast.LENGTH_LONG).show()
                 }//not match
                  checkPassword(newPass,conPass) -> {
-                     Toast.makeText(context, "not match", Toast.LENGTH_LONG).show()
+                     Toast.makeText(context, "ข้อมูลไม่ตรงกัน", Toast.LENGTH_LONG).show()
                 }//...
                 else -> {
+                    val DialogView = LayoutInflater.from(activity).inflate(R.layout.dialog, null)
                     val builder = AlertDialog.Builder(activity)
-                    builder.setTitle("ต้องการเปลี่ยนรหัสใช่หรือไม่")
-                    builder.setMessage("")
-                    builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+                    val title = TextView(context)
+                    title.text = "ต้องการเปลี่ยนรหัสใช่หรือไม่"
+                    title.setPadding(50, 50, 50, 50);
+                    title.textSize = 20F;
+                    builder.setCustomTitle(title)
+                    builder.setView(DialogView)
+                    val mAlertDialog = builder.show()
+                    DialogView.btn_yes.setOnClickListener {
                         setPasswordToDB(binding.changepassInputConfirmPassword.text.toString())
+                        mAlertDialog.dismiss()
                     }
-                    builder.setNegativeButton(android.R.string.no) { dialog, which ->
-
+                    DialogView.btn_no.setOnClickListener {
+                        mAlertDialog.dismiss()
                     }
-                    builder.show()
                 }
             }//when
         }
@@ -74,6 +82,28 @@ class FragmentChangePassword : Fragment() {
         binding.changepassInputCurrPassword.addTextChangedListener(object:TextWatcher{
             override fun afterTextChanged(s: Editable?) {
                 validatePassword(binding.changepassInputCurrPassword.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+        binding.changepassInputNewPassword.addTextChangedListener(object:TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+        binding.changepassInputConfirmPassword.addTextChangedListener(object:TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
             }
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
@@ -97,26 +127,30 @@ class FragmentChangePassword : Fragment() {
     //-------------------------------------------------- FUN PASSWORD NOT MATCH BETWEEN NEW&CON ----
     fun checkPassword(new:String,con:String):Boolean{
         if (new != con){
-            binding.changepassInputConfirmPassword.setBackgroundResource(R.drawable.input_fail)
-            binding.changepassInputNewPassword.setBackgroundResource(R.drawable.input_fail)
+            binding.changepassInputConfirmPassword.setTextColor(resources.getColor(R.color.red))
+            binding.changepassInputNewPassword.setTextColor(resources.getColor(R.color.red))
             return true
         }
-        binding.changepassInputConfirmPassword.setBackgroundResource(R.drawable.card_input)
-        binding.changepassInputNewPassword.setBackgroundResource(R.drawable.card_input)
+        binding.changepassInputConfirmPassword.setTextColor(resources.getColor(R.color.txt))
+        binding.changepassInputNewPassword.setTextColor(resources.getColor(R.color.txt))
         return false
     }
     //______________________________________________________________________________________________
     //------------------------------------------------------------- FUN SET PASSWORD TO DATABASE ---
-    fun setPasswordToDB(password:String){
+    private fun setPasswordToDB(password:String){
         val db = Firebase.firestore
         val data = db.collection("Users account")
-        data.get().addOnSuccessListener { result ->
-            for(document in result){
-                if (InfoUser.staff_code == document.data["staff_code"]){
-                    data.document(document.id).update("password",password)
-                }//if
-            }//for
-        }//get
+                    data.whereEqualTo("gmail",InfoUser.gmail)
+                    .get()
+                    .addOnSuccessListener { docs ->
+                        for(doc in docs){
+                            data.document(doc.id).update("password",password)
+                            Log.d("TAG", "DocumentSnapshot successfully updated!")
+                        }//for
+                    }//success
+                    .addOnFailureListener { e ->
+                        Log.w("TAG", "Error updating document", e)
+                    }//fail
     }
     //______________________________________________________________________________________________
     //--------------------------------------------- FUN PASSWORD NOT MATCH WITH CURRENT PASSWORD ---

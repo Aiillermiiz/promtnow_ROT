@@ -17,7 +17,7 @@ class MainPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
         //------------------------------------------------------------------------- ONCLICK --------
-        var pinFragmentAuthenPin = FragmentSignupPin.newInstance(FragmentSignupPin.PinState.STATE_AUTHEN,"","","","","","",InfoUser.pin)
+        var pinFragmentAuthenPin = FragmentSignupPin.newInstance(FragmentSignupPin.PinState.STATE_AUTHEN,"","","","","","","",InfoUser.pin)
         pinFragmentAuthenPin.setPinListener(object : FragmentSignupPin.PinListener{
             override fun onSuccess(pin: String) {
                 Log.d("pinsucess",pin)

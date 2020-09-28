@@ -1,2 +1,3 @@
 rootProject.name='promtnow_ROT'
-include ':app'
+include ':app',':MPChartLib'
+
