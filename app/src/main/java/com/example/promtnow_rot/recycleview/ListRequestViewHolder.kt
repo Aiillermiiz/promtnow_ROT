@@ -3,6 +3,8 @@ package com.example.promtnow_rot.recycleview
 import androidx.recyclerview.widget.RecyclerView
 import com.example.promtnow_rot.databinding.ListItemListDetailBinding
 import kotlinx.android.synthetic.main.list_item_list_detail.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ListRequestViewHolder(itemView: ListItemListDetailBinding, var listener: ListRequestAdapter.OnClickListener):RecyclerView.ViewHolder(itemView.root) {
     fun bind(docModel:dataList){

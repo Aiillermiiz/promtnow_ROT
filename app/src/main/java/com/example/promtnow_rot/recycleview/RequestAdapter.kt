@@ -34,6 +34,22 @@ class RequestAdapter(var listener: OnClickListener):
         data.remove(delObj)
         notifyDataSetChanged()
     }
+    //delete all
+    fun deleteAll(){
+        data.removeAll(data)
+        notifyDataSetChanged()
+    }
+    //fun delete from id
+    fun deleteFromId(id:Int){
+        var filter = mutableListOf<DataOfForm>()
+        data.forEachIndexed { index, dataOfForm ->
+            if (dataOfForm.id != id){
+                filter.add(dataOfForm)
+            }
+        }//for
+        data = filter
+        notifyDataSetChanged()
+    }
     interface OnClickListener{
         fun onClick(data:DataOfForm)
         fun onLongClick(data:DataOfForm)

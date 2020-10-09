@@ -3,12 +3,13 @@ package com.example.promtnow_rot.register
 import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
-import android.text.InputType
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
@@ -20,6 +21,7 @@ import com.example.promtnow_rot.databinding.FragmentSignupBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.dialog.view.*
+import java.util.*
 import java.util.regex.Pattern.compile
 
 
@@ -29,8 +31,8 @@ import java.util.regex.Pattern.compile
 @Suppress("DEPRECATION")
 class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
     lateinit var binding:FragmentSignupBinding
-    var select_dep = "เลือกแผนก"
-    var select_pos = "เลือกตำแหน่ง"
+    var select_dep = ""
+    var select_pos = ""
     var checkGmail = ""
     var checkStfcode = ""
     var statusPass = "hide"
@@ -67,19 +69,19 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
         //button sign up
         binding.regBtnSignup.setOnClickListener {
             if (checkEdittextEmpty()) {
-                Toast.makeText(context, "กรุณากรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Please fill out all fields.", Toast.LENGTH_LONG).show()
             }else if(!binding.checkbox.isChecked){
-                Toast.makeText(context, "กรุณายอมรับข้อกำหนดและเงื่อนไข", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Please accept the terms and conditions.", Toast.LENGTH_LONG).show()
             }else if(checkGmail == "true" || checkStfcode == "true"){
-                Toast.makeText(context, "กรุณากตรวจสอบข้อมูล", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Please check the information.", Toast.LENGTH_LONG).show()
             }else if(!isEmailValid(binding.regInputGmail.text.toString())){
-                binding.regInputGmail.error = "กรุณาระบุให้เป็นประเภทอีเมล"
+                binding.regInputGmail.error = "Please specify as email type."
             }else{
                 //Inflate the dialog with custom view
                 val DialogView = LayoutInflater.from(activity).inflate(R.layout.dialog, null)
                 val builder = AlertDialog.Builder(activity)
                 val title = TextView(context)
-                title.text = "ต้องการดำเนินการต่อหรือไม่"
+                title.text = "Do you want to continue?"
                 title.setPadding(50, 50, 50, 50);
                 title.textSize = 20F;
                 builder.setCustomTitle(title)
@@ -155,7 +157,7 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                         if (binding.regInputGmail.text.contains(" ")){
-                        binding.regInputGmail.error = "มีช่องว่าง"
+                        binding.regInputGmail.error = "There is a space"
                     }
             }
         })
@@ -168,7 +170,7 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if (binding.regInputPassword.text.contains(" ")){
-                        binding.regInputPassword.error = "มีช่องว่าง"
+                        binding.regInputPassword.error = "There is a space"
                     }
 
             }
@@ -182,7 +184,7 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if (binding.regInputName.text.contains(" ")){
-                        binding.regInputName.error = "มีช่องว่าง"
+                        binding.regInputName.error = "There is a space"
                     }
             }
         })
@@ -195,7 +197,7 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if (binding.regInputLname.text.contains(" ")){
-                        binding.regInputLname.error = "มีช่องว่าง"
+                        binding.regInputLname.error = "There is a space"
                     }
             }
         })
@@ -209,17 +211,19 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if (binding.regInputStaffCode.text.contains(" ")){
-                        binding.regInputStaffCode.error = "มีช่องว่าง"
+                        binding.regInputStaffCode.error = "There is a space"
                     }//if
             }
         })
         //__________________________________________________________________________________________
     }
     //----------------------------------------------------------------- FUN CHECK EDITTEXT EMPTY ---
-    fun checkEdittextEmpty():Boolean{
+    private fun checkEdittextEmpty():Boolean{
         if(binding.regInputGmail.text.isEmpty()
             || binding.regInputPassword.text.isEmpty()
             || binding.regInputName.text.isEmpty()
+            || select_dep == "Select"
+            || select_pos == "Select"
             || binding.regInputStaffCode.text.isEmpty()) {
             return true
         }
@@ -252,7 +256,7 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
                 for (document in result) {
                     val equalsGmail = document.data["gmail"].toString().equals(gmail, true)
                     if (equalsGmail) {
-                        binding.regInputGmail.error = "อีเมลนี้ถูกใช้ไปแล้ว"
+                        binding.regInputGmail.error = "This Email has already been used."
                         checkGmail = "true"
                     }//if
                 }//for
@@ -268,7 +272,7 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
             for(document in result){
                 val equalsStfcode = document.data["staff_code"].toString().equals(stfcode,true)
                 if(equalsStfcode){
-                    binding.regInputStaffCode.error = "รหัสพนักงานนี้ถูกใช้ไปแล้ว"
+                    binding.regInputStaffCode.error = "This staff code has already been used."
                     checkStfcode = "true"
                 }//if
             }//for
@@ -287,7 +291,6 @@ class FragmentSignup : Fragment(), AdapterView.OnItemSelectedListener {
         ).matcher(email).matches()
     }
     //______________________________________________________________________________________________
-
 
 }
 

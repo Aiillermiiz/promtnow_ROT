@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffffff"
+        android:paddingTop="30dp"
         tools:context=".setting.FragmentSetting">
 
         <TextView
@@ -16,7 +17,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:padding="5dp"
-            android:text="ตั้งค่า"
+            android:text="Setting"
             android:textColor="#393939"
             android:textSize="20dp"/>
 
@@ -50,7 +51,7 @@
                     android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                     android:drawablePadding="10dp"
                     android:padding="10dp"
-                    android:text="โปรไฟล์"
+                    android:text="Profile"
                     android:textColor="#393939"
                     android:textSize="20dp" />
                 <TextView
@@ -62,7 +63,7 @@
                     android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                     android:drawablePadding="10dp"
                     android:padding="10dp"
-                    android:text="เปลี่ยนรหัสผ่าน"
+                    android:text="Change password"
                     android:textColor="#393939"
                     android:textSize="20dp" />
                 <RelativeLayout
@@ -86,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@+id/setting_icon_logout"
                         android:paddingStart="10dp"
-                        android:text="ออกจากระบบ"
+                        android:text="Logout"
                         android:textStyle=""
                         android:textColor="#393939"
                         android:textSize="20dp" />

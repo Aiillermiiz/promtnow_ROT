@@ -1,12 +1,14 @@
 package com.example.promtnow_rot
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.view.View
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,12 +25,18 @@ import com.google.firebase.ktx.Firebase
 class LoginActivity : AppCompatActivity() {
     lateinit var rId: ActivityMainBinding
     var statusPass = "hide"
+    var doubleBackToExitPressedOnce = false
     lateinit var dataUser: DataUser
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         rId = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        //set data
         rId.logInputGmail.setText("user@gmail.com")
         rId.logInputPassword.setText("user123")
+        //
+        if (Prefs(this).rememberCheck){
+            startActivity(Intent(this,MainPageActivity::class.java))
+        }
         //---------------------------------------------------------------------- CLICK BUTTON ------
         rId.btnLogin.setOnClickListener {
             val inputGmail = rId.logInputGmail.text.toString()
@@ -102,59 +110,45 @@ class LoginActivity : AppCompatActivity() {
 
     //______________________________________________________________________________________________
     //------------------------------------------------------------ FUN CHECK DATA IN DATABASE ------
-    fun checkGmailAndPassword(inputGmail: String, inputPassword: String) {
+    private fun checkGmailAndPassword(inputGmail: String, inputPassword: String) {
         var gmail = ""
-        var name = ""
-        var lname = ""
         var password = ""
-        var pin = ""
-        var position = ""
-        var staff_code = ""
-        var department = ""
         //call database
         val db = Firebase.firestore
-        val Data = db.collection("Users account")
+        val data = db.collection("Users account")
         //get data and check
-        Data.get().addOnSuccessListener { result ->
-            loop@ for (document in result) {
-                //gmail equals gmail in database
-                //ignore case = (value,ignorecase true or false) ไม่สนว่าจะเป็นตัวอักษรพิมพ์เล็กหรือใหญ่
-                val gmailEquals = document.data["gmail"]?.toString().equals(inputGmail, true)
-                //password equals password in database
-                val passwordEquals = document.data["password"] == inputPassword
-                //check in database and get data
-                if (gmailEquals && passwordEquals) {
-                    gmail = document.data["gmail"].toString()
-                    name = document.data["name"].toString()
-                    lname = document.data["lname"].toString()
-                    password = document.data["password"].toString()
-                    pin = document.data["pin"].toString()
-                    position = document.data["position"].toString()
-                    staff_code = document.data["staff_code"].toString()
-                    department = document.data["department"].toString()
-                    break@loop
-                }
-            }//loop
-            //check in input and put data
-            when {
-                inputGmail.equals(gmail, true) && inputPassword == password -> {
-                    //put data
-                    InfoUser.getInstance()?.name = name
-                    InfoUser.getInstance()?.lname = lname
-                    InfoUser.getInstance()?.gmail = gmail
-                    InfoUser.getInstance()?.password = password
-                    InfoUser.getInstance()?.position = position
-                    InfoUser.getInstance()?.staff_code = staff_code
-                    InfoUser.getInstance()?.department = department
-                    InfoUser.getInstance()?.pin = pin
-                    startActivity(Intent(this, MainPageActivity::class.java))
-                }
-                else -> {
-                    Toast.makeText(this, "ข้อมูลไม่ถูกต้อง", Toast.LENGTH_LONG).show()
-                }
-            }//when
-        }
+        data.get()
+            .addOnSuccessListener { docs ->
+                for(doc in docs){
+                    //ignore case = (value,ignorecase true or false) ไม่สนว่าจะเป็นตัวอักษรพิมพ์เล็กหรือใหญ่
+                   if (doc.data["gmail"]?.toString().equals(inputGmail,true) && doc.data["password"]?.toString() == inputPassword){
+                       gmail =  doc.data["gmail"].toString()
+                       password = doc.data["password"].toString()
+                       InfoUser.getInstance()?.pin = doc.data["pin"].toString()
+                       InfoUser.getInstance()?.staff_code = doc.data["staff_code"].toString()
+                       InfoUser.getInstance()?.name = doc.data["name"].toString()
+                       InfoUser.getInstance()?.lname = doc.data["lname"].toString()
+                       InfoUser.getInstance()?.gmail = doc.data["gmail"].toString()
+                       InfoUser.getInstance()?.department = doc.data["department"].toString()
+                       InfoUser.getInstance()?.position = doc.data["position"].toString()
+                       InfoUser.getInstance()?.password = doc.data["password"].toString()
+                       startActivity(Intent(this,MainPageActivity::class.java))
+                   }
+                }//for
+                Log.d("tag","${gmail} :${password}")
+                if (inputGmail != gmail || inputPassword != password){
+                    Toast.makeText(this, "Incorrect information.", Toast.LENGTH_LONG).show()
+                }//if
+            }//on success
     }
     //______________________________________________________________________________________________
-
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+        this.doubleBackToExitPressedOnce = true
+        Toast.makeText(this,"Press again to logout.",Toast.LENGTH_SHORT).show()
+        Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
+    }
 }

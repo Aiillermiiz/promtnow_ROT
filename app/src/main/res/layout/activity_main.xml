@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
-        android:background="#fff"
+        android:background="@drawable/bg_img_blue2"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
         android:paddingTop="50dp"
@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
         <ImageView
             android:layout_alignParentEnd="true"
-            android:background="@drawable/vehicle"
+            android:background="@drawable/vehicle_white"
             android:layout_width="80dp"
             android:layout_height="80dp"/>
         <LinearLayout
@@ -21,16 +21,16 @@
             android:layout_height="wrap_content">
             <TextView
                 android:textSize="35dp"
-                android:textColor="#000"
-                android:text="ยินดีต้อนรับ"
+                android:textColor="#fff"
+                android:text="Welcome"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:textSize="17dp"
                 android:layout_marginTop="10dp"
-                android:textColor="#5A5A5A"
-                android:text="เข้าสู่ระบบเพื่อดำเนินการ"
+                android:textColor="#CCCCCC"
+                android:text="Sign in to continue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -50,24 +50,25 @@
                 android:paddingBottom="10dp">
                 <TextView
                     android:id="@+id/text_email"
+                    android:layout_marginStart="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:text="ที่อยู่อีเมล"
-                    android:textColor="#5A5A5A"
+                    android:text="E-mail"
+                    android:textColor="#fff"
                     android:textSize="17dp" />
                 <EditText
                     android:id="@+id/log_input_gmail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:background="@drawable/card_input_edit"
                     android:layout_below="@+id/text_email"
-                    android:drawablePadding="15dp"
                     android:hint=" @email.com"
                     android:inputType="textEmailAddress"
-                    android:paddingStart="15dp"
-                    android:textColor="#000"
-                    android:textColorHint="#BABABA"
+                    android:paddingStart="20dp"
+                    android:textColor="#6797BC"
+                    android:textColorHint="#C8D7E3"
                     android:textSize="20dp" />
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -78,21 +79,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="5dp"
+                        android:layout_marginStart="20dp"
                         android:paddingBottom="5dp"
-                        android:text="รหัสผ่าน"
-                        android:textColor="#5A5A5A"
+                        android:text="Password"
+                        android:textColor="#fff"
                         android:textSize="17dp" />
                     <EditText
                         android:id="@+id/log_input_password"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_below="@+id/text_pass"
-                        android:drawablePadding="15dp"
                         android:hint=" ******"
+                        android:background="@drawable/card_input_edit"
                         android:inputType="textPassword"
-                        android:paddingStart="15dp"
-                        android:textColor="#000"
-                        android:textColorHint="#BABABA"
+                        android:paddingStart="20dp"
+                        android:textColor="#6797BC"
+                        android:textColorHint="#C8D7E3"
                         android:textSize="20dp" />
                     <TextView
                         android:id="@+id/eyes"
@@ -109,16 +111,7 @@
                 android:id="@+id/rel_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp">
-
-                <CheckBox
-                    android:id="@+id/remember"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="จดจำผู้ใช้"
-                    android:textColor="#5A5A5A"
-                    android:textSize="17dp" />
+                android:layout_marginTop="0dp">
 
                 <TextView
                     android:id="@+id/forgot_password"
@@ -127,9 +120,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginBottom="10dp"
                     android:padding="5dp"
-                    android:textStyle="bold"
-                    android:text="ลืมรหัสผ่าน?"
-                    android:textColor="#000"
+                    android:text="Forgot password?"
+                    android:textColor="#fff"
                     android:textSize="17dp" />
 
                 <Button
@@ -142,7 +134,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/login_btn_disable"
                     android:enabled="false"
-                    android:text="เข้าสู่ระบบ"
+                    android:text="Sign in"
                     android:textColor="#ffffff"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -161,8 +153,8 @@
                 android:id="@+id/txt_sign"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ยังไม่มีบัญชีผู้ใช้"
-                android:textColor="#5A5A5A"
+                android:text="Don't have an account"
+                android:textColor="#fff"
                 android:textSize="17dp" />
 
             <TextView
@@ -173,7 +165,7 @@
                 android:layout_toEndOf="@+id/txt_sign"
                 android:paddingStart="5dp"
                 android:text="@string/sing_up_here"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textSize="17dp"/>
         </RelativeLayout>
 

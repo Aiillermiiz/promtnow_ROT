@@ -39,6 +39,8 @@ class FragmentChangePassword : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //set text status bar black
+        activity!!.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         //---------------------------------------------------------------- ONCLICK -----------------
         binding.changepassBtnBack.setOnClickListener {
             activity?.onBackPressed()
@@ -49,19 +51,19 @@ class FragmentChangePassword : Fragment() {
             val pass = binding.changepassInputCurrPassword.text.toString()
             when {//empty
                 checkEdittextEmpty() -> {
-                    Toast.makeText(context, "กรุณากรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Please fill out all fields.", Toast.LENGTH_LONG).show()
                 }//validate
                 validatePassword(pass)-> {
-                    Toast.makeText(context,"กรุณาตรวจสอบข้อมูล",Toast.LENGTH_LONG).show()
+                    Toast.makeText(context,"Please check the information.",Toast.LENGTH_LONG).show()
                 }//not match
                  checkPassword(newPass,conPass) -> {
-                     Toast.makeText(context, "ข้อมูลไม่ตรงกัน", Toast.LENGTH_LONG).show()
+                     Toast.makeText(context, "Data does not match", Toast.LENGTH_LONG).show()
                 }//...
                 else -> {
                     val DialogView = LayoutInflater.from(activity).inflate(R.layout.dialog, null)
                     val builder = AlertDialog.Builder(activity)
                     val title = TextView(context)
-                    title.text = "ต้องการเปลี่ยนรหัสใช่หรือไม่"
+                    title.text = "Do you want to change the code?"
                     title.setPadding(50, 50, 50, 50);
                     title.textSize = 20F;
                     builder.setCustomTitle(title)
@@ -115,7 +117,7 @@ class FragmentChangePassword : Fragment() {
         //__________________________________________________________________________________________
     }//on view create
     //----------------------------------------------------------------- FUN CHECK EDITTEXT EMPTY ---
-    fun checkEdittextEmpty():Boolean{
+    private fun checkEdittextEmpty():Boolean{
         if(binding.changepassInputCurrPassword.getText().isEmpty()
             || binding.changepassInputNewPassword.getText().isEmpty()
             || binding.changepassInputConfirmPassword.getText().isEmpty()) {
@@ -156,7 +158,7 @@ class FragmentChangePassword : Fragment() {
     //--------------------------------------------- FUN PASSWORD NOT MATCH WITH CURRENT PASSWORD ---
     fun validatePassword(password: String):Boolean{
         if (password != InfoUser.password){
-            binding.changepassInputCurrPassword.error = "กรอกรหัสผิด"
+            binding.changepassInputCurrPassword.error = "Wrong password"
             return true
         }//if
         return false

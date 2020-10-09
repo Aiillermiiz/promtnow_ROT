@@ -11,4 +11,8 @@
     <color name="txt">#5A5A5A</color>
     <color name="blue">#00BCD4</color>
     <color name="red">#FD4739</color>
+    <color name="reject">#29BCFF</color>
+    <color name="approve">#5DE8B0</color>
+    <color name="pending">#FFC107</color>
+
 </resources>

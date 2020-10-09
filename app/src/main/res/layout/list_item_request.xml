@@ -2,55 +2,62 @@
 <layout>
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="110dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/doc"
-        android:layout_height="140dp"
-        android:padding="10dp">
-        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:elevation="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/card_list_request"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+        <LinearLayout
             android:id="@+id/rel_top"
-            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/color"
+                android:background="#FFC107"
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+            <TextView
                 android:id="@+id/add_date_show"
-                android:text="เอกสารคำร้อง"
-                android:drawableTop="@drawable/ic_date_range_black_24dp"
-                android:textColor="#5A5A5A"
-                android:textSize="13dp"
-                android:layout_centerHorizontal="true"
+                android:text="Request"
+                android:layout_marginStart="10dp"
+                android:drawablePadding="5dp"
+                android:textColor="#000"
+                android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/add_text"
-                android:text="ประจำเดือน"
-                android:layout_below="@+id/add_date_show"
-                android:textColor="#5A5A5A"
-                android:textSize="13dp"
-                android:layout_centerHorizontal="true"
+                android:text="Monthly"
+                android:layout_marginStart="5dp"
+                android:textColor="#000"
+                android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/month"
+                android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/add_text"
-                android:layout_centerHorizontal="true"
                 android:text="january"
                 android:textColor="#00BCD4"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/year"
-                android:layout_below="@+id/month"
+                android:id="@+id/date"
+                android:layout_marginStart="5dp"
+                android:textSize="15dp"
+                android:textColor="#9E9E9E"
+                android:text="(1-jan-2563)"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="2020"
-                android:textColor="#FFC107"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </RelativeLayout>
 </layout>

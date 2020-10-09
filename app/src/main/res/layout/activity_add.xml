@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <FrameLayout
         android:id="@+id/root_add"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".add.FragmentAdd">
         <RelativeLayout
-            android:background="#edf1f4"
+            android:background="@drawable/bg_img_blue2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
                 android:id="@+id/rel_top"
-                android:background="#fff"
+                android:paddingTop="30dp"
+                android:paddingBottom="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/text_top"
                     android:textSize="20dp"
                     android:padding="5dp"
-                    android:textColor="#393939"
+                    android:textColor="#fff"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="ใบเบิกค่าพาหนะ"
+                    android:text="Your request"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -30,35 +32,71 @@
                     android:id="@+id/btn_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/btn_back_color" />
+                    android:drawableStart="@drawable/btn_back_white" />
 
                 <TextView
                     android:id="@+id/add_btn_submit"
                     android:layout_width="wrap_content"
+                    android:layout_marginEnd="5dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:drawableLeft="@drawable/btn_check_color"
+                    android:layout_alignParentEnd="true"
+                    android:drawableStart="@drawable/icon_check_white"
                     android:padding="2dp" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rel_list"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_below="@+id/rel_top"
+                android:background="#E4EAEF"
                 android:layout_above="@+id/text_price"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/rel_top"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
+                <com.victor.loading.rotate.RotateLoading
+                    android:id="@+id/rotate_loading"
+                    android:layout_marginTop="50dp"
+                    android:layout_width="80dp"
+                    android:layout_centerInParent="true"
+                    app:loading_color="#00BCD4"
+                    android:layout_height="80dp"
+                    app:loading_speed="11"
+                    app:loading_width="5dp" />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/add_recycle_main"
-                    android:paddingTop="15dp"
+                    android:visibility="invisible"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:listitem="@layout/list_item_list_detail" />
             </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/rel_loading"
+                android:background="#E4EAEF"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                android:layout_above="@+id/text_price"
+                android:gravity="center"
+                android:layout_below="@+id/rel_top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/rel_not_request"
+                android:background="#E4EAEF"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                android:layout_above="@+id/text_price"
+                android:gravity="center"
+                android:layout_below="@+id/rel_top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="25sp"
+                    android:text="Don't have list of request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
             <Button
                 android:id="@+id/add_btn_add"
                 android:layout_width="65dp"
@@ -91,14 +129,14 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="ยอดรวม"
+                    android:text="Total"
                     android:textStyle="bold"
                     android:textColor="#393939"
                     android:textSize="22dp"/>
                 <TextView
                     android:id="@+id/add_total_amount"
                     android:textSize="22dp"
-                    android:text="00.00"
+                    android:text=" ฿ 0"
                     android:textColor="#673AB7"
                     android:layout_toEndOf="@+id/text_total"
                     android:gravity="right"

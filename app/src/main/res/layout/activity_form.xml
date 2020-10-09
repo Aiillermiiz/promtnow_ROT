@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout
+            android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#edf1f4"
             tools:ignore="UselessParent">
 
             <RelativeLayout
                 android:id="@+id/rel_top"
+                android:background="#fff"
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/text_top"
@@ -24,33 +26,24 @@
                     android:layout_centerHorizontal="true"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="รายการคำร้อง"
+                    android:text="List of request"
                     android:textColor="#393939"
                     android:textSize="20dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
                 android:layout_below="@+id/rel_top"
-                android:background="#eeeeee" />
-
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
             <TextView
                 android:id="@+id/btn_back"
+                android:layout_marginTop="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/btn_back_color"
                 android:padding="0dp" />
-
-            <TextView
-                android:id="@+id/form_add_btn_submit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:drawableRight="@drawable/btn_check_color"
-                android:padding="2dp" />
 
             <RelativeLayout
                 android:paddingTop="10dp"
@@ -58,41 +51,30 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/rel_top"
                 android:orientation="vertical">
-                <RelativeLayout
-                    android:id="@+id/rel_make"
-                    android:background="#fff"
-                    android:layout_above="@+id/rel_date"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
 
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btn_date"
-                    android:padding="5dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/card_icon_circle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:padding="7dp"
-                        android:drawableTop="@drawable/icon_date"
-                        android:background="@drawable/card_btn_delete"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"/>
-                </RelativeLayout>
-
-                <RelativeLayout
+                <LinearLayout
                     android:id="@+id/rel_date"
-                    android:layout_below="@+id/btn_date"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="#fff">
-
+                    android:layout_marginEnd="20dp">
+                    <RelativeLayout
+                        android:id="@+id/btn_date"
+                        android:padding="5dp"
+                        android:background="@drawable/card_icon_circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:padding="7dp"
+                            android:drawableTop="@drawable/icon_date"
+                            android:background="@drawable/card_btn_red"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+                    </RelativeLayout>
                     <RelativeLayout
                         android:id="@+id/rel_0"
                         android:layout_width="match_parent"
@@ -109,7 +91,7 @@
                                 android:id="@+id/text_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="วันที่ไป"
+                                android:text="Date"
                                 android:textColor="#424242"
                                 android:textSize="19dp" />
 
@@ -123,7 +105,7 @@
                                 android:textSize="19dp" />
                         </LinearLayout>
                     </RelativeLayout>
-                </RelativeLayout>
+                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/rel_form"
@@ -131,13 +113,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rel_date"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@drawable/card_bill_form"
                     android:elevation="10dp"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    android:paddingBottom="20dp">
+                    android:paddingTop="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="30dp">
 
                     <LinearLayout
                         android:id="@+id/rel_1"
@@ -157,7 +138,7 @@
                                 android:id="@+id/text_pro"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="เลขที่โปรเจค"
+                                android:text="Project no"
                                 android:textColor="#424242"
                                 android:textSize="15dp" />
 
@@ -182,7 +163,7 @@
                                 android:id="@+id/text_res"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="หัวข้อเรื่อง"
+                                android:text="reason"
                                 android:textColor="#424242"
                                 android:textSize="15dp" />
 
@@ -229,7 +210,7 @@
                                 android:id="@+id/text_from"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="เดินทางจาก"
+                                android:text="From"
                                 android:textColor="#424242"
                                 android:textSize="15dp" />
 
@@ -254,7 +235,7 @@
                                 android:id="@+id/text_to"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ไปยัง"
+                                android:text="To"
                                 android:textColor="#424242"
                                 android:textSize="15dp" />
 
@@ -288,7 +269,7 @@
                                 android:id="@+id/txt_by"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="เดินทางโดย"
+                                android:text="By"
                                 android:textColor="#424242"
                                 android:textSize="15dp" />
 
@@ -305,7 +286,7 @@
                                 android:layout_below="@+id/txt_by"
                                 android:background="#ffffff"
                                 android:gravity="center"
-                                android:text="เลือก"
+                                android:text="Select"
                                 android:textSize="19dp" />
 
                             <TextView
@@ -326,7 +307,7 @@
                                 android:id="@+id/txt_type"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ประเภทการเดินทาง"
+                                android:text="Trip type"
                                 android:textColor="#424242"
                                 android:textSize="15dp" />
 
@@ -343,7 +324,7 @@
                                 android:layout_below="@+id/txt_type"
                                 android:background="#ffffff"
                                 android:gravity="center"
-                                android:text="เลือก"
+                                android:text="Select"
                                 android:textSize="19dp" />
 
                             <TextView
@@ -369,9 +350,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/btn_upload_img"
-                            android:text="อัพโหลดรูปภาพ"
+                            android:text="Upload Image"
                             android:textColor="#FFFFFF"
-                            android:textSize="19dp"
+                            android:textSize="15dp"
                             android:textStyle="bold" />
 
                         <ImageView
@@ -395,7 +376,7 @@
                             android:id="@+id/text_des"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="รายละเอียด"
+                            android:text="Description"
                             android:textColor="#424242"
                             android:textSize="15dp" />
 
@@ -433,7 +414,7 @@
                         android:drawablePadding="5dp"
                         android:paddingTop="7dp"
                         android:paddingBottom="7dp"
-                        android:text="จำนวนเงิน"
+                        android:text="Amount"
                         android:textColor="#424242"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -468,7 +449,19 @@
                         android:textColor="#424242"
                         android:textSize="20dp" />
                 </RelativeLayout>
-
+                <Button
+                    android:id="@+id/form_add_btn_submit"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/profile_btn_update"
+                    android:text="Submit"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
         </RelativeLayout>
 

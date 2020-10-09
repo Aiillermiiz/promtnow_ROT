@@ -18,4 +18,5 @@ object InfoUser{
     var position = ""
     var department = ""
     var pin = ""
+    var device_id = ""
 }

@@ -7,19 +7,21 @@
         android:layout_height="match_parent"
         tools:context=".request.FragmentApprove">
         <RelativeLayout
-            android:background="#fff"
+            android:background="#E4EAEF"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
                 android:id="@+id/rel_top"
-                android:background="#fff"
+                android:background="#5DE8B0"
+                android:paddingTop="30dp"
+                android:paddingBottom="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/text_top"
-                    android:text="คำร้องที่อนุมัติเเล้ว"
+                    android:text="Approved requests"
                     android:padding="5dp"
-                    android:textColor="#393939"
+                    android:textColor="#fff"
                     android:textStyle="bold"
                     android:textSize="20dp"
                     android:layout_centerHorizontal="true"
@@ -27,152 +29,93 @@
                     android:layout_alignParentTop="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/fil"
-                android:background="#fff"
-                android:layout_below="@+id/rel_top"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/icon"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/approve_icon_check"
-                    android:layout_width="70dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="70dp"/>
 
-            </RelativeLayout>
-            <TextView
-                android:layout_below="@+id/rel_top"
-                android:background="#eeeeee"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-            <TextView
-                android:id="@+id/approved_btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/btn_back_color" />
-
-            <RelativeLayout
-                android:id="@+id/rel_fil"
-                android:layout_below="@+id/fil"
-                android:padding="5dp"
-                android:layout_marginTop="5dp"
-                android:background="#F4F4F4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/btn_clear"
-                    android:padding="5dp"
-                    android:drawableRight="@drawable/ic_delete_sweep_black_24dp"
+                    android:id="@+id/approved_btn_back"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/txt_filter"
-                    android:text="ตัวกรอง"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="25dp"
-                    android:textColor="#5E5E5E"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/btn_ok"
-                    android:padding="5dp"
-                    android:drawableRight="@drawable/ic_check_black_24dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </RelativeLayout>
-            <LinearLayout
-                android:id="@+id/rel_button"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:layout_below="@+id/rel_fil"
-                android:background="#fff"
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:id="@+id/rel_month"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/card_input_edit">
+                    android:drawableStart="@drawable/btn_back_white" />
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@+id/text_top"
+                    android:weightSum="6"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:id="@+id/rel_month"
+                        android:layout_weight="3"
+                        android:background="@drawable/card_input_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <Spinner
+                            android:id="@+id/spinner_month"
+                            android:paddingStart="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:id="@+id/txt_month"
+                            android:text="Select"
+                            android:gravity="center_vertical"
+                            android:textSize="15dp"
+                            android:padding="5dp"
+                            android:textColor="#C1C1C1"
+                            android:background="#ffffff"
+                            android:layout_marginStart="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rel_year"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/card_input_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <Spinner
+                            android:id="@+id/spinner_year"
+                            android:paddingStart="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+                        <TextView
+                            android:id="@+id/txt_year"
+                            android:text="Select"
+                            android:gravity="center_vertical"
+                            android:textSize="15dp"
+                            android:padding="5dp"
+                            android:textColor="#C1C1C1"
+                            android:background="#ffffff"
+                            android:layout_marginStart="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
 
-                    <Spinner
-                        android:id="@+id/spinner_month"
-                        android:paddingStart="15dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"/>
-                    <TextView
-                        android:id="@+id/txt_month"
-                        android:text="เลือกเดือน"
-                        android:textSize="18dp"
-                        android:padding="5dp"
-                        android:background="#fff"
-                        android:layout_marginStart="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="50dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/rel_year"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/card_input_edit">
-
-                    <Spinner
-                        android:id="@+id/spinner_year"
-                        android:paddingStart="15dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"/>
-                    <TextView
-                        android:id="@+id/txt_year"
-                        android:text="เลือกปี"
-                        android:textSize="18dp"
-                        android:padding="5dp"
-                        android:background="#ffffff"
-                        android:layout_marginStart="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="50dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/rel_pro_set"
-                android:layout_below="@+id/rel_button"
-                android:background="#fff"
-                android:textSize="19dp"
-                android:elevation="2dp"
-                android:layout_centerHorizontal="true"
-                android:textColor="#5E5E5E"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_info_outline_black_24dp"
-                android:padding="10dp"
-                android:gravity="center"
-                android:text="คุณสามารดูรายละเอียดคำร้องได้เท่านั้น"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </TextView>
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/rel_pro_set"
+                android:layout_below="@+id/rel_top"
                 android:layout_height="match_parent">
+                <com.victor.loading.rotate.RotateLoading
+                    android:id="@+id/rotate_loading"
+                    android:layout_marginTop="50dp"
+                    android:layout_width="80dp"
+                    android:layout_centerInParent="true"
+                    app:loading_color="#00BCD4"
+                    android:layout_height="80dp"
+                    app:loading_speed="11"
+                    app:loading_width="5dp" />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/approve_recycle"
+                    android:visibility="invisible"
                     android:layout_width="wrap_content"
-                    app:spanCount="3"
-                    tools:itemCount="9"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/list_item_request"
                     android:layout_height="match_parent"/>
             </RelativeLayout>

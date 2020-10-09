@@ -1,27 +1,23 @@
 package com.example.promtnow_rot.register
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.EditText
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.promtnow_rot.LoginActivity
+import com.example.promtnow_rot.Prefs
 import com.example.promtnow_rot.R
 import com.example.promtnow_rot.databinding.FragmentSignupPinBinding
-import com.example.promtnow_rot.homepage.FragmentHomePage
+import com.example.promtnow_rot.homepage.HomePageActivity
 import com.example.promtnow_rot.homepage.InfoUser
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main.*
-import org.w3c.dom.Element
 
 
 /**
@@ -45,7 +41,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     var department = ""
     var position = ""
     var pin_from_login = ""
-
+    var pinFormDB = ""
     interface PinListener {
         fun onSuccess(pin:String)
         fun onFail(fail: Int)
@@ -185,7 +181,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     }
     //______________________________________________________________________________________________
     //----------------------------------------------------------------------FUN ADD PIN ------------
-    fun addText(pinText: String) {
+    private fun addText(pinText: String) {
         val sb = StringBuilder(pin).append(pinText)
         pin = sb.toString()
         notifyIndicatior()
@@ -199,7 +195,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
                 PinState.STATE_CONFIRM ->{
                     confirmPin = pin
                     if(confirmPin == firstPin){
-                        Toast.makeText(context,"สร้างบัญชีสำเร็จ",Toast.LENGTH_LONG).show()
+                        Toast.makeText(context,"Sign up success",Toast.LENGTH_LONG).show()
                         //set data to database
                         createAccount()
                         //go to login
@@ -211,28 +207,32 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
                     }
                 }
                 PinState.STATE_AUTHEN ->{
-                    if(pin == pin_from_login){
-                        fragmentManager!!.beginTransaction().apply {
-                            replace(R.id.layoutFragmentMainPage, FragmentHomePage())
-                            commit()
-                        }
-
+                    if(pin == pinFormDB || pin == InfoUser.pin){
+                        setDeviceId(InfoUser.device_id)
+                        //get info user
+                        getDataUser(InfoUser.device_id)
+                        //remember user
+                        Prefs(requireContext()).rememberCheck = true
+                        binding.lock.postDelayed({ binding.lock.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.ic_lock_open_black_24dp,0, 0) }, 700)
+                        Handler().postDelayed({
+                            startActivity(Intent(requireContext(),HomePageActivity::class.java))
+                        }, 800)
                     }else{
-                        Toast.makeText(context,"รหัสพินไม่ถูกต้อง",Toast.LENGTH_LONG).show()
+                        Toast.makeText(context,"Pin fail",Toast.LENGTH_LONG).show()
                         clearFillPin()
                         failCount +=1
                         listener?.onFail(failCount)
-                    }
+                    }//else
                 }
-            }
+            }//when
             return
         }
     }
 
     //______________________________________________________________________________________________
     //------------------------------------------------------------------ FUN REMOVE PIN ------------
-    fun removeText() {
-        if (pin.length == 0){
+    private fun removeText() {
+        if (pin.isEmpty()){
             return
         }
         val sb = StringBuilder(pin).deleteCharAt(pin.length - 1)
@@ -241,7 +241,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     }
     //______________________________________________________________________________________________
     //---------------------------------------------------------------- SET BACKGROUND WHEN INPUT ---
-    fun notifyIndicatior() {
+    private fun notifyIndicatior() {
         indicators.forEachIndexed { index, view ->
             view.setBackgroundResource(
                 when {
@@ -258,18 +258,25 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     }
     //______________________________________________________________________________________________
     //---------------------------------------------------------------- SET PIN STATE ---------------
-    fun setState(state : PinState){
+    private fun setState(state : PinState){
         when(state){
             PinState.STATE_AUTHEN -> {
-                binding.tvTitle.text = "ระบุรหัส PIN"
+                if(Prefs(requireContext()).rememberCheck){
+                    binding.numBack.visibility = View.INVISIBLE
+                }
+                binding.lock.visibility = View.VISIBLE
+                binding.tvTitle.text = "Enter PIN"
+                val id: String = Settings.Secure.getString(context!!.contentResolver,Settings.Secure.ANDROID_ID)
+                InfoUser.device_id = id
+                getPinFormDevice(InfoUser.device_id)
             }
             PinState.STATE_CREATE -> {
                 clearFillPin()
                 confirmPin = ""
-                binding.tvTitle.text = "สร้างรหัส PIN"
+                binding.tvTitle.text = "Create PIN"
             }
             PinState.STATE_CONFIRM -> {
-                binding.tvTitle.text = "ยืนยันรหัส PIN"
+                binding.tvTitle.text = "Confirm PIN"
                  firstPin = pin
                 clearFillPin()
             }
@@ -285,7 +292,7 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
     }
     //______________________________________________________________________________________________
     //------------------------------------------------------------ ADD ACCOUNT TO DATABASE ---------
-    fun createAccount(){
+    private fun createAccount(){
         //connect data base
         val db = Firebase.firestore
         //set data
@@ -297,12 +304,96 @@ class FragmentSignupPin : Fragment(), View.OnClickListener {
             "pin" to confirmPin,
             "position" to position,
             "staff_code" to staff_code,
-            "gmail" to gmail
+            "gmail" to gmail,
+            "device_id" to ""
         )
         // Add data to collection
         db.collection("Users account")
             .add(account)
+        //create collection alert
+        createCollAlert()
     }
     //______________________________________________________________________________________________
+    //set device id
+    private fun setDeviceId(id:String){
+        val db = Firebase.firestore
+        val data = db.collection("Users account")
+        data.whereEqualTo("staff_code",InfoUser.staff_code)
+            .get()
+            .addOnSuccessListener { docs ->
+                for(doc in docs){
+                    data.document(doc.id).update("device_id",id)
+                    InfoUser.device_id = id
+                }//for
+            }//success
+    }
+    //check device id for get pin
+    private fun getPinFormDevice(id:String){
+        val db = Firebase.firestore
+        val data = db.collection("Users account")
+        data.whereEqualTo("device_id",id)
+            .get()
+            .addOnSuccessListener { docs ->
+                for (doc in docs){
+                    pinFormDB = doc.data["pin"].toString()
+                }//for
+            }
+    }
+
+    //------------------------------------------------------------ FUN GET DATA IN DATABASE ------
+    private fun getDataUser(dev_id:String) {
+        //call database
+        val db = Firebase.firestore
+        val data = db.collection("Users account")
+        //get data and check
+        data.whereEqualTo("device_id",dev_id)
+            .get()
+            .addOnSuccessListener { result ->
+            loop@ for (document in result) {
+                //check in database and get data
+                InfoUser.getInstance()?.gmail = document.data["gmail"].toString()
+                InfoUser.getInstance()?.name = document.data["name"].toString()
+                InfoUser.getInstance()?.lname = document.data["lname"].toString()
+                InfoUser.getInstance()?.password = document.data["password"].toString()
+                InfoUser.getInstance()?.pin = document.data["pin"].toString()
+                InfoUser.getInstance()?.position = document.data["position"].toString()
+                InfoUser.getInstance()?.staff_code = document.data["staff_code"].toString()
+                InfoUser.getInstance()?.department = document.data["department"].toString()
+                    break@loop
+            }//loop
+        }
+    }
+    //______________________________________________________________________________________________
+//-------------------------------------------------------------- CREATE COLLECTION ALERT --------
+    private fun createCollAlert(){
+        val db = Firebase.firestore
+        val collUser = db.collection("Users account")
+        collUser.whereEqualTo("staff_code",staff_code)
+            .get()
+            .addOnSuccessListener{ docs ->
+                for(doc in docs){
+                    //set data to variable
+                    val makeData = hashMapOf("number" to 0)
+                    //create collection alert
+                    //pending
+                    collUser.document(doc.id)
+                        .collection("alert")
+                        .document("pending")
+                        .set(makeData)
+                    //approve
+                    collUser.document(doc.id)
+                        .collection("alert")
+                        .document("approve")
+                        .set(makeData)
+                    //reject
+                    collUser.document(doc.id)
+                        .collection("alert")
+                        .document("reject")
+                        .set(makeData)
+                }//for
+            }
+    }
+    //______________________________________________________________________________________________
+
 }
 

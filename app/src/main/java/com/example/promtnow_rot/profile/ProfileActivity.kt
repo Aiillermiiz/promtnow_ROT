@@ -5,9 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
+import com.example.promtnow_rot.Prefs
 import com.example.promtnow_rot.R
 import com.example.promtnow_rot.databinding.ActivityProfileBinding
 import com.example.promtnow_rot.homepage.InfoUser
@@ -17,12 +20,18 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_profile)
+        //set text status bar black
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         //---------------------------------------------------------------------- SET VALUE ---------
         binding.name.text = "${InfoUser.name} ${InfoUser.lname}"
         binding.stfCode.text = InfoUser.staff_code
         binding.gmail.text = InfoUser.gmail
         binding.dep.text = InfoUser.department
         binding.pos.text = InfoUser.position
+        //set image from prefs
+                Glide.with(this)
+                    .load(Prefs(this).image)
+                    .into(binding.img)
         //__________________________________________________________________________________________
         //------------------------------------------------------------------- ONCLICK --------------
         binding.profileBtnBack.setOnClickListener {
@@ -47,12 +56,17 @@ class ProfileActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 0 && resultCode == Activity.RESULT_OK){
-            Log.d("tag","test")
             binding.name.text = "${InfoUser.name} ${InfoUser.lname}"
             binding.stfCode.text = InfoUser.staff_code
             binding.gmail.text = InfoUser.gmail
             binding.dep.text = InfoUser.department
             binding.pos.text = InfoUser.position
+            //set image from prefs
+            Glide.with(this)
+                .load(Prefs(this).image)
+                .placeholder(R.drawable.icon_no_image)
+                .dontAnimate()
+                .into(binding.img)
         }//if
     }//
     //______________________________________________________________________________________________

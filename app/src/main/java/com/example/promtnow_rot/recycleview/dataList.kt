@@ -11,4 +11,5 @@ data class dataList(var date:String,
                     var vehicle:String,
                     var description:String,
                     var type:String,
-                    var amount:Int): Parcelable
+                    var amount:Int,
+                    var id:String): Parcelable

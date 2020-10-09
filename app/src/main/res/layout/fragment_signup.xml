@@ -8,26 +8,26 @@
         tools:context=".register.FragmentSignup">
 
         <RelativeLayout
+            android:paddingTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffffff">
+            android:background="@drawable/bg_img_blue2">
         <RelativeLayout
             android:id="@+id/rel_top"
-            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/reg_btn_back_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/btn_back_color" />
+                android:drawableLeft="@drawable/btn_back_white" />
 
             <TextView
                 android:id="@+id/reg_btn_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:drawableLeft="@drawable/btn_next_top"/>
+                android:drawableLeft="@drawable/btn_next_white"/>
 
             <TextView
                 android:id="@+id/text"
@@ -36,15 +36,10 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:text="สร้างบัญชี"
-                android:textColor="#393939"
+                android:text="Sign up"
+                android:textColor="#fff"
                 android:textSize="20dp" />
         </RelativeLayout>
-            <TextView
-                android:layout_below="@+id/rel_top"
-                android:background="#eeeeee"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
             <RelativeLayout
                 android:id="@+id/rel_input"
@@ -62,36 +57,39 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:id="@+id/text_email"
+                        android:layout_marginStart="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:text="ที่อยู่อีเมล"
-                        android:textColor="#5A5A5A"
+                        android:text="E-mail"
+                        android:textColor="#fff"
                         android:textSize="17dp" />
 
                     <EditText
                         android:id="@+id/reg_input_gmail"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:background="@drawable/card_input_edit"
                         android:layout_below="@+id/text_email"
                         android:paddingStart="20dp"
                         android:hint="hello@gmail.com"
                         android:inputType="textEmailAddress"
                         android:padding="10dp"
-                        android:textColor="#000"
-                        android:textColorHint="#BABABA"
+                        android:textColor="#6797BC"
+                        android:textColorHint="#C8D7E3"
                         android:textSize="18dp" />
 
                     <TextView
                         android:id="@+id/text_pass"
+                        android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/reg_input_gmail"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:text="รหัสผ่าน"
-                        android:textColor="#5A5A5A"
+                        android:text="Password"
+                        android:textColor="#fff"
                         android:textSize="17dp" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -99,8 +97,8 @@
                         android:layout_toEndOf="@+id/text_pass"
                         android:layout_below="@+id/reg_input_gmail"
                         android:padding="7dp"
-                        android:text="*ไม่เกิน 10 ตัวอักษร"
-                        android:textColor="#AFAFAF"
+                        android:text="*Not more than 10 characters"
+                        android:textColor="#CCCCCC"
                         android:textSize="15dp" />
 
                     <EditText
@@ -108,14 +106,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:maxLength="10"
+                        android:background="@drawable/card_input_edit"
                         android:layout_below="@+id/text_pass"
                         android:paddingStart="20dp"
                         android:hint="*******"
                         android:inputType="textPassword"
                         android:padding="10dp"
                         android:paddingRight="10dp"
-                        android:textColor="#000"
-                        android:textColorHint="#BABABA"
+                        android:textColor="#6797BC"
+                        android:textColorHint="#C8D7E3"
                         android:textSize="18dp" />
 
                     <TextView
@@ -143,25 +142,27 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/text_name"
+                                android:layout_marginStart="20dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
-                                android:text="ชื่อผู้ใช้"
-                                android:textColor="#5A5A5A"
+                                android:text="First name"
+                                android:textColor="#fff"
                                 android:textSize="17dp" />
                             <EditText
                                 android:id="@+id/reg_input_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
+                                android:background="@drawable/card_input_edit"
                                 android:layout_below="@+id/text_name"
                                 android:paddingStart="20dp"
                                 android:hint="Hello"
                                 android:inputType="text"
                                 android:padding="10dp"
                                 android:paddingRight="10dp"
-                                android:textColor="#000"
-                                android:textColorHint="#BABABA"
+                                android:textColor="#6797BC"
+                                android:textColorHint="#C8D7E3"
                                 android:textSize="18dp" />
                         </RelativeLayout>
                         <RelativeLayout
@@ -171,37 +172,40 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/text_lname"
+                                android:layout_marginStart="20dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
-                                android:text="นามสกุล"
-                                android:textColor="#5A5A5A"
+                                android:text="Last name"
+                                android:textColor="#fff"
                                 android:textSize="17dp" />
                             <EditText
                                 android:id="@+id/reg_input_lname"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
+                                android:background="@drawable/card_input_edit"
                                 android:layout_below="@+id/text_lname"
                                 android:hint="world"
                                 android:inputType="text"
                                 android:padding="10dp"
                                 android:paddingStart="20dp"
-                                android:textColor="#000"
-                                android:textColorHint="#BABABA"
+                                android:textColor="#6797BC"
+                                android:textColorHint="#C8D7E3"
                                 android:textSize="18dp" />
                         </RelativeLayout>
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/text_ei"
+                        android:layout_marginStart="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/linear"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:text="รหัสพนักงาน"
-                        android:textColor="#5A5A5A"
+                        android:text="Staff code"
+                        android:textColor="#fff"
                         android:textSize="17dp" />
 
                     <EditText
@@ -211,26 +215,29 @@
                         android:layout_below="@+id/text_ei"
                         android:paddingStart="20dp"
                         android:hint="8***"
+                        android:background="@drawable/card_input_edit"
                         android:maxLength="4"
                         android:inputType="number"
                         android:padding="10dp"
-                        android:textColor="#000"
-                        android:textColorHint="#BABABA"
+                        android:textColor="#6797BC"
+                        android:textColorHint="#C8D7E3"
                         android:textSize="18dp" />
 
                     <TextView
                         android:id="@+id/text_dep"
+                        android:layout_marginStart="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/reg_input_staff_code"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:text="แผนก"
-                        android:textColor="#5A5A5A"
+                        android:text="Department"
+                        android:textColor="#fff"
                         android:textSize="17dp" />
 
                     <RelativeLayout
                         android:id="@+id/rel_dep"
+                        android:background="@drawable/card_input_edit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/text_dep">
@@ -242,39 +249,34 @@
                             android:layout_height="50dp"/>
                         <TextView
                             android:id="@+id/txt_dep"
-                            android:text="เลือกแผนก"
+                            android:text="Select"
                             android:gravity="center_vertical"
                             android:textSize="18dp"
                             android:padding="5dp"
-                            android:textColor="#5A5A5A"
+                            android:textColor="#6797BC"
                             android:background="#ffffff"
                             android:layout_marginStart="15dp"
                             android:layout_centerVertical="true"
                             android:layout_marginEnd="50dp"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
-                        <TextView
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_below="@+id/spinner_dep"
-                            android:background="#505050"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"/>
                     </RelativeLayout>
 
                     <TextView
                         android:id="@+id/text_pos"
+                        android:layout_marginStart="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/rel_dep"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:text="ตำแหน่ง"
-                        android:textColor="#5A5A5A"
+                        android:text="Position"
+                        android:textColor="#fff"
                         android:textSize="17dp" />
 
                     <RelativeLayout
                         android:id="@+id/rel_pos"
+                        android:background="@drawable/card_input_edit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/text_pos">
@@ -286,27 +288,23 @@
                             android:layout_height="50dp"/>
                         <TextView
                             android:id="@+id/txt_pos"
-                            android:text="เลือกตำแหน่ง"
+                            android:text="Select"
+                            android:gravity="center_vertical"
                             android:textSize="18dp"
-                            android:textColor="#5A5A5A"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:textColor="#6797BC"
                             android:background="#ffffff"
                             android:layout_marginStart="15dp"
-                            android:layout_marginTop="19dp"
+                            android:layout_marginTop="5dp"
                             android:layout_marginEnd="50dp"
                             android:layout_width="match_parent"
-                            android:layout_height="26dp"/>
-                        <TextView
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_below="@+id/spinner_pos"
-                            android:background="#505050"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"/>
+                            android:layout_height="40dp"/>
                     </RelativeLayout>
                 </RelativeLayout>
                 <CheckBox
                     android:id="@+id/checkbox"
-                    android:buttonTint="#00B6E3"
+                    android:buttonTint="#fff"
                     android:layout_below="@+id/rel_form"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
@@ -314,21 +312,22 @@
                 <TextView
                     android:id="@+id/text_ag"
                     android:layout_marginTop="20dp"
-                    android:text="เห็นด้วยกับ"
+                    android:text="Agree with"
                     android:padding="5dp"
                     android:textSize="17dp"
-                    android:textColor="#5A5A5A"
+                    android:textColor="#fff"
                     android:layout_toEndOf="@+id/checkbox"
                     android:layout_below="@+id/rel_form"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:layout_marginTop="20dp"
-                    android:text="ข้อกำหนดและเงื่อนไข"
+                    android:textStyle="bold"
+                    android:text="Terms and condition"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:textSize="17dp"
-                    android:textColor="#00B6E3"
+                    android:textColor="#fff"
                     android:layout_toEndOf="@+id/text_ag"
                     android:layout_below="@+id/rel_form"
                     android:layout_width="wrap_content"

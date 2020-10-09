@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<FrameLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".register.FragmentSignupPin"
     tools:ignore="UselessLeaf">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:background="#fff"
+        android:background="@drawable/bg_img_launch"
         android:orientation="vertical"
         android:gravity="bottom"
         android:paddingBottom="10dp"
@@ -23,8 +22,8 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/alegreya_sans_sc"
             android:gravity="center"
-            android:text="สร้างรหัส PIN"
-            android:textColor="#222222"
+            android:text="Create PIN"
+            android:textColor="#fff"
             android:textSize="40dp" />
         <LinearLayout
             android:orientation="horizontal"
@@ -87,12 +86,11 @@
                 android:layout_margin="5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/reg_btn_num_pin"
                 android:gravity="center"
                 android:text="1"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:textSize="34dp" />
             <TextView
                 android:id="@+id/num_2"
@@ -101,7 +99,6 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="60dp"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_row="0"
                 android:layout_column="1"
                 android:layout_gravity="center"
@@ -109,7 +106,7 @@
                 android:text="2"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:textSize="34dp"/>
             <TextView
                 android:id="@+id/num_3"
@@ -120,12 +117,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_column="2"
                 android:layout_row="0" />
             <TextView
@@ -134,7 +130,7 @@
                 android:text="4"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_margin="5dp"
                 android:layout_marginLeft="20dp"
@@ -142,7 +138,6 @@
                 android:layout_gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_column="0"
                 android:layout_row="1"/>
             <TextView
@@ -154,12 +149,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_column="1"
                 android:layout_row="1"/>
             <TextView
@@ -172,11 +166,10 @@
                 android:layout_marginRight="20dp"
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_column="2"
                 android:layout_row="1"/>
             <TextView
@@ -188,12 +181,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_column="0"
                 android:layout_row="2"/>
             <TextView
@@ -205,12 +197,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_column="1"
                 android:layout_row="2"/>
             <TextView
@@ -223,11 +214,10 @@
                 android:layout_marginRight="20dp"
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_column="2"
                 android:layout_row="2"/>
             <TextView
@@ -248,13 +238,12 @@
                 android:textStyle="bold"
                 android:layout_margin="5dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#222222"
+                android:textColor="#fff"
                 android:gravity="center"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:background="@drawable/reg_btn_num_pin"
                 android:layout_gravity="center"
                 android:layout_column="1"
                 android:layout_row="3"/>
@@ -272,5 +261,13 @@
                 android:layout_row="3"/>
         </GridLayout>
     </LinearLayout>
-</FrameLayout>
+    <TextView
+        android:id="@+id/lock"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        android:drawableTop="@drawable/ic_lock_outline_black_24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
 </layout>

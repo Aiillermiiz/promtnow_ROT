@@ -9,7 +9,6 @@ import com.example.promtnow_rot.R
 class ListRequestAdapter(var listener:OnClickListener) :
     RecyclerView.Adapter<ListRequestViewHolder>() {
     var InfoForm = mutableListOf<dataList>()
-    var sum : Int = 0
     //create view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListRequestViewHolder {
         return ListRequestViewHolder(
@@ -41,12 +40,22 @@ class ListRequestAdapter(var listener:OnClickListener) :
         InfoForm.removeAll(InfoForm)
         notifyDataSetChanged()
     }
-    //sum total amount
-    fun sumAmount():Int{
+    //update list
+    fun updateForm(updateObj:dataList){
+        InfoForm.forEachIndexed { index, dataList ->
+            if (dataList.id == updateObj.id){
+                InfoForm[index] = updateObj
+            }
+        }//for index
+        notifyDataSetChanged()
+    }
+    //sum amount
+    fun sumAmount(): Int {
+        var sum = 0
         InfoForm.forEachIndexed { index, dataList ->
             sum += InfoForm[index].amount
         }
-        return  sum
+        return sum
     }
     // interface class onclick item
     interface OnClickListener{

@@ -22,6 +22,8 @@ class MoneyActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_money)
+        //set text status bar black
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         //----------------------------------------------------------------- SPINNER ----------------
         //spinner month
         val spinner_year = binding.spinnerYear

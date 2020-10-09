@@ -10,4 +10,9 @@
         <item name="android:statusBarColor">@color/colorwhite</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+    <!-- status bar โปร่งใส่   -->
+    <style name="TranslucentStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
 </resources>
